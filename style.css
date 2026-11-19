@@ -302,7 +302,9 @@ footer a {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
-  margin: 2rem 0;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
 .product-grid-section > h2 {
@@ -323,8 +325,10 @@ footer a {
 
 .product-card img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: 220px;
+  /* The source graphics are portrait pins with baked-in text; cropping cuts the words in half. */
+  object-fit: contain;
+  background: #f1f5f9;
   display: block;
 }
 
