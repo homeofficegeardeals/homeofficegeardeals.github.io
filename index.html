@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>blam240 — sites</title>
+  <meta name="description" content="Small sites and tools built by blam240.">
+  <link rel="canonical" href="https://blam240.github.io/">
+  <style>
+    :root {
+      --bg: #0f1115;
+      --card: #171a21;
+      --line: #262b35;
+      --text: #e7e9ee;
+      --muted: #9aa3b2;
+      --accent: #7c8cff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(900px 500px at 50% -10%, #1b2030, var(--bg));
+      color: var(--text);
+      font: 16px/1.6 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    main { width: 100%; max-width: 620px; }
+    h1 { margin: 0 0 6px; font-size: 1.9rem; letter-spacing: -0.02em; }
+    .tagline { margin: 0 0 32px; color: var(--muted); }
+    .card {
+      display: block;
+      padding: 20px 22px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color .15s ease, transform .15s ease;
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .card h2 { margin: 0 0 4px; font-size: 1.05rem; }
+    .card p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .arrow { float: right; color: var(--accent); }
+    footer { margin-top: 32px; font-size: .85rem; color: var(--muted); }
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>blam240</h1>
+    <p class="tagline">Small sites and tools.</p>
+
+    <a class="card" href="/home-office-gear-deals/">
+      <span class="arrow">&rarr;</span>
+      <h2>Home Office Gear Deals</h2>
+      <p>Independent reviews of desks, chairs, webcams and desk gear for remote work.</p>
+    </a>
+
+    <footer>
+      <a href="https://github.com/blam240">github.com/blam240</a>
+    </footer>
+  </main>
+</body>
+</html>
