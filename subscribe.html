@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Weekly Home Office Deals + Exclusive Discounts</title>
+  <meta name="description" content="Join 2,000+ remote workers who get early access to affiliate deals and product comparisons. Welcome PDF: '5 Home Office Hacks' included!">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="chairs/ergonomic-chairs.html">Ergonomic Chairs</a>
+      <a href="desks/standing-desks.html">Standing Desks</a>
+      <a href="webcams/webcams.html">Webcams</a>
+      <a href="headphones/headphones.html">Headphones</a>
+      <a href="accessories/accessories.html">Desk Accessories</a>
+      <a href="kit-roundup/complete-kit.html">Complete Kit Roundup</a>
+    </nav>
+  </header>
+
+  <main class="email-capture-page">
+    <article>
+      <div class="email-hero">
+        <h1>Get Weekly Home Office Deals + Exclusive Discounts</h1>
+        <p>Join 2,000+ remote workers who get early access to affiliate deals and product comparisons. We send weekly newsletters with:</p>
+        <ul>
+          <li>✅ Top ergonomic gear under $50 (chair cushions, wrist rests)</li>
+          <li>✅ Bundle deals on standing desks + webcam kits</li>
+          <li>✅ Exclusive 10% discounts via affiliate partnerships</li>
+          <li>✅ Early access to new product reviews</li>
+        </ul>
+      </div>
+
+      <form class="subscribe-form" action="[SUBSTACK/CONVERTKIT_SUBSCRIBE_URL]" method="get">
+        <input type="email" name="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe Free</button>
+      </form>
+
+      <p style="text-align: center; margin-top: 1rem; color: #666;">
+        <small>No spam. Unsubscribe anytime.</small>
+      </p>
+
+      <!-- Welcome PDF Download (after subscription) -->
+      <section class="welcome-offer">
+        <h2>Welcome Gift: "5 Home Office Hacks" PDF</h2>
+        <p>Download our free guide to setting up a productive home office on a budget:</p>
+        <a href="#" data-unfilled="[WELCOME_PDF_URL]" class="cta-button-small">Download Free Guide →</a>
+      </section>
+
+      <!-- Substack/ConvertKit Integration Instructions -->
+      <aside class="integration-guide">
+        <h3>Integrate with Your Email Platform</h3>
+        <p><strong>Substack (Recommended for free tier):</strong></p>
+        <ol>
+          <li>Go to <a href="https://substack.com" target="_blank">substack.com</a> and create a new publication</li>
+          <li>Name it "Home Office Gear Deals"</li>
+          <li>Create your first post: "Welcome — 5 Home Office Hacks"</li>
+          <li>Copy the subscription URL from Substack settings</li>
+          <li>Paste it into the form action above: `<form action="[YOUR_SUBSTACK_URL]" ...>`</li>
+        </ol>
+
+        <p><strong>ConvertKit (Free tier alternative):</strong></p>
+        <ol>
+          <li>Go to <a href="https://convertkit.com" target="_blank">convertkit.com</a> and create a free account</li>
+          <li>Create a new landing page titled "Welcome to Home Office Gear Deals"</li>
+          <li>Add email field + subscribe button</li>
+          <li>Copy the landing page URL</li>
+          <li>Paste it into the form action above</li>
+        </ol>
+
+        <p><strong>Welcome PDF Creation:</strong></p>
+        <ul>
+          <li>Use <a href="https://canva.com" target="_blank">Canva free tier</a></li>
+          <li>Create A4 document: "5 Home Office Hacks for Remote Workers"</li>
+          <li>Include tips on cable management, monitor positioning, etc.</li>
+          <li>Export as PDF and save to your hosting folder</li>
+        </ul>
+      </aside>
+
+      <!-- Amazon Associates Compliance Footer -->
+      <div class="disclaimer">
+        <strong>Disclaimer:</strong> This site contains affiliate links from Amazon Associates. When you buy through these links, we may earn a commission at no extra cost to you. Prices and availability are subject to change without notice. We only recommend products we trust for remote workers.
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Home Office Gear Deals. All rights reserved.</p>
+    
+    <!-- Amazon Associates Compliance Footer -->
+    <div class="affiliate-disclosure">
+      <strong>Disclaimer:</strong> This site contains affiliate links from Amazon Associates. When you buy through these links, we may earn a commission at no extra cost to you. Prices and availability are subject to change without notice. We only recommend products we trust for remote workers.
+    </div>
+  </footer>
+
+  <script>
+    console.log('Email capture page loaded successfully');
+    
+    // Form submission tracking (optional enhancement)
+    const subscribeForm = document.querySelector('.subscribe-form');
+    subscribeForm.addEventListener('submit', () => {
+      console.log('User subscribed to newsletter');
+      // Optionally add Google Analytics event tracking here
+    });
+  </script>
+</body>
+</html>
