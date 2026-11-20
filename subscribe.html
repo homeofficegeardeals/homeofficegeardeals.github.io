@@ -6,6 +6,7 @@
   <title>Get Weekly Home Office Deals + Exclusive Discounts</title>
   <meta name="description" content="Join 2,000+ remote workers who get early access to affiliate deals and product comparisons. Welcome PDF: '5 Home Office Hacks' included!">
   <link rel="stylesheet" href="style.css">
+  <link rel="canonical" href="https://homeofficegeardeals.github.io/subscribe.html">
 </head>
 <body>
   <header>
@@ -33,51 +34,24 @@
         </ul>
       </div>
 
-      <form class="subscribe-form" action="[SUBSTACK/CONVERTKIT_SUBSCRIBE_URL]" method="get">
-        <input type="email" name="email" placeholder="Your email address" required>
-        <button type="submit">Subscribe Free</button>
-      </form>
+      <div class="subscribe-form" style="text-align: center; padding: 1.5rem; background: #f7f7f5; border-radius: 8px;">
+        <p style="margin: 0 0 .5rem;"><strong>The weekly email list isn't live yet.</strong></p>
+        <p style="margin: 0; color: #555;">We're still setting up the send. No signup box until it actually works &mdash;
+        grab the free guide below instead, no email required.</p>
+      </div>
 
       <p style="text-align: center; margin-top: 1rem; color: #666;">
-        <small>No spam. Unsubscribe anytime.</small>
+        <small>No spam, ever. Unsubscribe anytime once the list opens.</small>
       </p>
 
-      <!-- Welcome PDF Download (after subscription) -->
+      <!-- Welcome PDF Download -->
       <section class="welcome-offer">
-        <h2>Welcome Gift: "5 Home Office Hacks" PDF</h2>
+        <h2>Free Gift: "Home Office Hacks" PDF</h2>
         <p>Download our free guide to setting up a productive home office on a budget:</p>
-        <a href="#" data-unfilled="[WELCOME_PDF_URL]" class="cta-button-small">Download Free Guide →</a>
+        <a href="assets/welcome-offer-home-office-hacks.pdf" class="cta-button-small">Download Free Guide →</a>
       </section>
 
-      <!-- Substack/ConvertKit Integration Instructions -->
-      <aside class="integration-guide">
-        <h3>Integrate with Your Email Platform</h3>
-        <p><strong>Substack (Recommended for free tier):</strong></p>
-        <ol>
-          <li>Go to <a href="https://substack.com" target="_blank">substack.com</a> and create a new publication</li>
-          <li>Name it "Home Office Gear Deals"</li>
-          <li>Create your first post: "Welcome — 5 Home Office Hacks"</li>
-          <li>Copy the subscription URL from Substack settings</li>
-          <li>Paste it into the form action above: `<form action="[YOUR_SUBSTACK_URL]" ...>`</li>
-        </ol>
 
-        <p><strong>ConvertKit (Free tier alternative):</strong></p>
-        <ol>
-          <li>Go to <a href="https://convertkit.com" target="_blank">convertkit.com</a> and create a free account</li>
-          <li>Create a new landing page titled "Welcome to Home Office Gear Deals"</li>
-          <li>Add email field + subscribe button</li>
-          <li>Copy the landing page URL</li>
-          <li>Paste it into the form action above</li>
-        </ol>
-
-        <p><strong>Welcome PDF Creation:</strong></p>
-        <ul>
-          <li>Use <a href="https://canva.com" target="_blank">Canva free tier</a></li>
-          <li>Create A4 document: "5 Home Office Hacks for Remote Workers"</li>
-          <li>Include tips on cable management, monitor positioning, etc.</li>
-          <li>Export as PDF and save to your hosting folder</li>
-        </ul>
-      </aside>
 
       <!-- Amazon Associates Compliance Footer -->
       <div class="disclaimer">
@@ -96,14 +70,9 @@
   </footer>
 
   <script>
-    console.log('Email capture page loaded successfully');
-    
-    // Form submission tracking (optional enhancement)
-    const subscribeForm = document.querySelector('.subscribe-form');
-    subscribeForm.addEventListener('submit', () => {
-      console.log('User subscribed to newsletter');
-      // Optionally add Google Analytics event tracking here
-    });
+    // The email list is not connected yet, so there is no form to track.
+    // Add the event hook here once an ESP form action exists.
+    console.log('Email capture page loaded');
   </script>
 </body>
 </html>
