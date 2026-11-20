@@ -835,3 +835,7 @@ img, svg, video, table { max-width: 100%; }
 }
 
 .featured-alert, .social-buttons, .subscribe-form { flex-wrap: wrap; }
+
+/* keep the alert icon inline with its text at every width */
+.featured-alert { flex-wrap: nowrap; }
+.alert-content { flex: 1 1 auto; }
