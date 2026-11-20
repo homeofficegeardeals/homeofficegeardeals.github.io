@@ -820,3 +820,18 @@ body > header.hero { border-bottom: none; }
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
 }
+
+/* ---------- Mobile overflow guards (2026-11-20) ---------- */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+img, svg, video, table { max-width: 100%; }
+
+.featured-alert { max-width: min(34rem, 100%); }
+.alert-content { min-width: 0; overflow-wrap: anywhere; }
+
+.hero-content, .shop-grid, .highlights-section, .product-grid-section,
+.footer-content, .trust-grid, .bonus-content {
+  min-width: 0;
+}
+
+.featured-alert, .social-buttons, .subscribe-form { flex-wrap: wrap; }
