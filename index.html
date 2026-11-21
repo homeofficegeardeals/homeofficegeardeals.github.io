@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="canonical" href="https://homeofficegeardeals.github.io/">
     <script src="assets/analytics.js" defer></script>
+
+    <script src="assets/newsletter-config.js" defer></script>
+    <script src="assets/newsletter.js" defer></script>
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Home Office Gear Deals">
   <meta property="og:title" content="Home Office Gear Deals 2026 — Best Ergonomic Chairs, Standing Desks &amp; Remote Work Essentials">
@@ -220,12 +223,22 @@
 
     <!-- Newsletter Section -->
     <section class="newsletter-section">
-        <h2>Get Our Weekly Office Gear Deals</h2>
-        <p>We send out a weekly roundup of the best deals on office equipment. No spam, unsubscribe anytime.</p>
-
-        <p class="newsletter-note"><strong>The weekly list isn't live yet.</strong>
-        No signup box until it actually works &mdash;
-        <a href="subscribe.html">see what's coming</a>, or grab the free checklist below.</p>
+      <h2>Get Our Weekly Office Gear Deals</h2>
+      <p>One email a week: the deals worth your time. No spam, unsubscribe any time.</p>
+      <form class="newsletter-form" data-newsletter hidden>
+        <label class="sr-only" for="nl-email">Email address</label>
+        <input id="nl-email" type="email" name="email" placeholder="you@example.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="newsletter-status" data-newsletter-status>
+        <strong>The weekly list isn't live yet.</strong> No signup box until it actually works —
+        <a href="subscribe.html">see what's coming</a>, or grab the free checklist.
+      </p>
+      <p class="newsletter-alt">
+        <a href="assets/welcome-offer-home-office-hacks.pdf" class="learn-more-link" download>
+          Download the free home office checklist →
+        </a>
+      </p>
     </section>
 
     <!-- Bonus Offer CTA -->
@@ -261,11 +274,6 @@
                     <li><a href="https://www.instagram.com/homeofficegeardeals/" target="_blank" rel="noopener">📸 Instagram</a></li>
 <li><a href="https://www.tiktok.com/@homeofficegeardeals" target="_blank" rel="noopener">📸 TikTok</a></li>
                 </ul>
-            </div>
-
-            <div class="affiliate-disclosure">
-                <p><strong>Affiliate Disclosure:</strong> We may earn a commission when you buy through our links at no extra cost to you.</p>
-                <p>Prices correct as of: November 19, 2026</p>
             </div>
 
             <div class="trust-badges">
