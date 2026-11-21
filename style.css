@@ -1078,3 +1078,34 @@ img, svg, video, table { max-width: 100%; }
 .newsletter-status.is-error { color: #a33a2a; }
 
 .newsletter-alt { margin: .9rem auto 0; font-size: .9rem; }
+
+/* ---------- Footer bottom row: copyright | disclosure | legal links ---------- */
+.main-footer .copyright {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem 1.5rem;
+}
+
+.main-footer .copyright > p {
+  margin: 0;
+  max-width: none;
+  font-size: .8rem;
+  color: #8fa39b;
+}
+
+.main-footer .copyright .affiliate-disclosure-line {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: .78rem;
+  color: #8fa39b;
+  max-width: 46ch;
+}
+
+.main-footer .copyright .affiliate-disclosure-line a { color: #b9c8c2; }
+
+@media (max-width: 900px) {
+  .main-footer .copyright { justify-content: flex-start; }
+}
