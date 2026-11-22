@@ -7,6 +7,7 @@
   <meta name="description" content="Complete home office kit for remote workers under $1000: ergonomic chair, standing desk, webcam, headphones, mouse, keyboard, monitor arm, and cable management. Full setup guide included.">
   <link rel="canonical" href="https://homeofficegeardeals.github.io/kit-roundup/complete-kit.html">
   <link rel="stylesheet" href="../style.css">
+  <script src="../assets/nav.js" defer></script>
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Home Office Gear Deals">
   <meta property="og:title" content="Complete Home Office Kit Roundup — Best Remote Work Setup Under $1000 Deals 2026">
@@ -20,16 +21,46 @@
 </head>
 <body>
   <header>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../chairs/ergonomic-chairs.html">Ergonomic Chairs</a>
-      <a href="../desks/standing-desks.html">Standing Desks</a>
-      <a href="../webcams/webcams.html">Webcams</h3>
-      <a href="../headphones/headphones.html">Headphones</a>
-      <a href="../accessories/accessories.html">Desk Accessories</a>
-      <a href="complete-kit.html">Complete Kit Roundup</a>
-      <a href="../subscribe.html">Subscribe to Deals</a>
-    </nav>
+    <nav class="main-nav">
+    <div class="nav-logo"><a href="../index.html">🏠 Home Office Gear Deals</a></div>
+    <button type="button" class="nav-burger" aria-label="Menu" aria-expanded="false">☰</button>
+    <div class="nav-body">
+      <div class="nav-group">
+        <button type="button" class="nav-group-toggle" aria-expanded="false">Home Office <span aria-hidden="true">▾</span></button>
+        <div class="nav-group-menu">
+          <a href="../chairs/ergonomic-chairs.html">Ergonomic Chairs</a>
+          <a href="../desks/standing-desks.html">Standing Desks</a>
+          <a href="../webcams/webcams.html">Webcams</a>
+          <a href="../headphones/headphones.html">Headphones</a>
+          <a href="../accessories/accessories.html">Accessories</a>
+          <a href="../kit-roundup/complete-kit.html">Complete Kit</a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-group-toggle" aria-expanded="false">Computers <span aria-hidden="true">▾</span></button>
+        <div class="nav-group-menu">
+          <a href="../pcs.html">Desktop PCs</a>
+          <a href="../laptops.html">Laptops</a>
+          <a href="../docking-stations.html">Docking Stations</a>
+          <a href="../monitors.html">Monitors</a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-group-toggle" aria-expanded="false">Components <span aria-hidden="true">▾</span></button>
+        <div class="nav-group-menu">
+          <a href="../routers.html">Routers & Mesh</a>
+          <a href="../hard-drives.html">Hard Drives & SSDs</a>
+          <a href="../gpu.html">Graphics Cards</a>
+          <a href="../cpu.html">Processors</a>
+          <a href="../components.html">Other Components</a>
+        </div>
+      </div>
+      <a class="nav-plain" href="../subscribe.html">Subscribe</a>
+      <form class="nav-search" action="../search.html" method="get" role="search">
+        <input type="search" name="q" placeholder="Search the site" aria-label="Search the site">
+      </form>
+    </div>
+  </nav>
   </header>
 
   <main class="product-page">
