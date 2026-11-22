@@ -1171,3 +1171,18 @@ img, svg, video, table { max-width: 100%; }
   .nav-group[data-open="true"] .nav-group-menu { display: flex; }
   .nav-search input { width: 100%; }
 }
+
+/* ---------- Product photo credit (CC BY requires attribution) ---------- */
+.photo-credit {
+  margin: .35rem 0 0;
+  font-size: .72rem;
+  color: var(--muted);
+  line-height: 1.35;
+}
+.product-card img[src*='assets/products'] {
+  object-fit: cover;
+  height: 220px;
+  padding: 0;
+  background: #f2f0ec;
+}
+
