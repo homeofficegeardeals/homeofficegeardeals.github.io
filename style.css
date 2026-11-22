@@ -1186,3 +1186,17 @@ img, svg, video, table { max-width: 100%; }
   background: #f2f0ec;
 }
 
+
+/* ---------- Product photo inside a pick block ---------- */
+.product-photo {
+  display: block;
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: .2rem 0 .5rem;
+  background: #f2f0ec;
+}
+
