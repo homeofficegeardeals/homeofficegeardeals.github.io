@@ -15,6 +15,7 @@
         .legal-wrap li { margin: .35rem 0; }
         .updated { color: #555; font-size: .9rem; margin-top: 0; }
     </style>
+  <script src="assets/nav.js" defer></script>
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Home Office Gear Deals">
   <meta property="og:title" content="Terms of Use — Home Office Gear Deals">
@@ -28,16 +29,45 @@
 </head>
 <body>
     <nav class="main-nav">
-        <div class="nav-logo"><a href="index.html">🏠 Home Office Gear Deals</a></div>
-        <ul class="nav-menu">
-            <li><a href="chairs/ergonomic-chairs.html">Ergonomic Chairs</a></li>
-            <li><a href="desks/standing-desks.html">Standing Desks</a></li>
-            <li><a href="webcams/webcams.html">Webcams</a></li>
-            <li><a href="headphones/headphones.html">Headphones</a></li>
-            <li><a href="accessories/accessories.html">Accessories</a></li>
-            <li><a href="kit-roundup/complete-kit.html">Complete Kit</a></li>
-        </ul>
-    </nav>
+    <div class="nav-logo"><a href="index.html">🏠 Home Office Gear Deals</a></div>
+    <button type="button" class="nav-burger" aria-label="Menu" aria-expanded="false">☰</button>
+    <div class="nav-body">
+      <div class="nav-group">
+        <button type="button" class="nav-group-toggle" aria-expanded="false">Home Office <span aria-hidden="true">▾</span></button>
+        <div class="nav-group-menu">
+          <a href="chairs/ergonomic-chairs.html">Ergonomic Chairs</a>
+          <a href="desks/standing-desks.html">Standing Desks</a>
+          <a href="webcams/webcams.html">Webcams</a>
+          <a href="headphones/headphones.html">Headphones</a>
+          <a href="accessories/accessories.html">Accessories</a>
+          <a href="kit-roundup/complete-kit.html">Complete Kit</a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-group-toggle" aria-expanded="false">Computers <span aria-hidden="true">▾</span></button>
+        <div class="nav-group-menu">
+          <a href="pcs.html">Desktop PCs</a>
+          <a href="laptops.html">Laptops</a>
+          <a href="docking-stations.html">Docking Stations</a>
+          <a href="monitors.html">Monitors</a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-group-toggle" aria-expanded="false">Components <span aria-hidden="true">▾</span></button>
+        <div class="nav-group-menu">
+          <a href="routers.html">Routers & Mesh</a>
+          <a href="hard-drives.html">Hard Drives & SSDs</a>
+          <a href="gpu.html">Graphics Cards</a>
+          <a href="cpu.html">Processors</a>
+          <a href="components.html">Other Components</a>
+        </div>
+      </div>
+      <a class="nav-plain" href="subscribe.html">Subscribe</a>
+      <form class="nav-search" action="search.html" method="get" role="search">
+        <input type="search" name="q" placeholder="Search the site" aria-label="Search the site">
+      </form>
+    </div>
+  </nav>
 
     <main class="legal-wrap">
         <h1>Terms of Use</h1>
