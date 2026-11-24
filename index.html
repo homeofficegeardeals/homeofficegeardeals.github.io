@@ -76,6 +76,7 @@
           <a href="clothing.html">Clothing & Accessories</a>
         </div>
       </div>
+      <a class="nav-plain" href="blog.html">Blog</a>
       <a class="nav-plain" href="subscribe.html">Subscribe</a>
       <form class="nav-search" action="search.html" method="get" role="search">
         <input type="search" name="q" placeholder="Search the site" aria-label="Search the site">
@@ -202,6 +203,80 @@
     </section>
 
     <!-- Product Highlights Section -->
+    
+<!--DEALS-->
+      <section class="deals-today" id="todays-picks">
+        <div class="deals-head">
+          <div>
+            <h2>Latest picks</h2>
+            <p class="deals-sub">What the daily batch is posting right now — newest first.</p>
+          </div>
+          <div class="deals-tools">
+            <label class="deals-sort">Sort by:
+              <select id="dealSort">
+                <option value="featured">Featured</option>
+                <option value="rating">Rating</option>
+                <option value="reviews">Most reviewed</option>
+                <option value="name">Name A–Z</option>
+              </select>
+            </label>
+            <span class="deals-count">4 products</span>
+          </div>
+        </div>
+        <div class="deals-grid" id="dealGrid">
+        <a class="deal-card" href="components.html"
+            data-name="noctua nh-d15 chromax.black dual-tower cpu cooler" data-rating="4.8" data-reviews="13534">
+            <span class="deal-body">
+              <span class="deal-title">Noctua NH-D15 chromax.Black Dual-Tower CPU Cooler</span>
+              <span class="deal-stars">★★★★☆ <b>13,534</b></span>
+              <span class="deal-cta">Check price on Amazon</span>
+            </span>
+          </a>
+        <a class="deal-card" href="components.html"
+            data-name="corsair 4000d airflow tempered glass mid-tower atx case" data-rating="4.8" data-reviews="19496">
+            <span class="deal-body">
+              <span class="deal-title">Corsair 4000D Airflow Tempered Glass Mid-Tower ATX Case</span>
+              <span class="deal-stars">★★★★☆ <b>19,496</b></span>
+              <span class="deal-cta">Check price on Amazon</span>
+            </span>
+          </a>
+        <a class="deal-card" href="cpu.html"
+            data-name="amd ryzen 5 5600x 6-core/12-thread desktop processor" data-rating="4.8" data-reviews="30268">
+            <span class="deal-body">
+              <span class="deal-title">AMD Ryzen 5 5600X 6-Core/12-Thread Desktop Processor</span>
+              <span class="deal-stars">★★★★☆ <b>30,268</b></span>
+              <span class="deal-cta">Check price on Amazon</span>
+            </span>
+          </a>
+        <a class="deal-card" href="components.html"
+            data-name="noctua nh-d15 dual tower cpu cooler" data-rating="4.8" data-reviews="3650">
+            <span class="deal-body">
+              <span class="deal-title">Noctua NH-D15 Dual Tower CPU Cooler</span>
+              <span class="deal-stars">★★★★☆ <b>3,650</b></span>
+              <span class="deal-cta">Check price on Amazon</span>
+            </span>
+          </a>
+        </div>
+        <p class="deals-more"><a href="categories.html">All categories →</a></p>
+      </section>
+      <script>
+      (function () {
+        var grid = document.getElementById("dealGrid");
+        var sel = document.getElementById("dealSort");
+        if (!grid || !sel) return;
+        var original = Array.prototype.slice.call(grid.children);
+        sel.addEventListener("change", function () {
+          var mode = sel.value;
+          var list = original.slice();
+          if (mode === "rating") list.sort(function (a, b) { return (+b.dataset.rating) - (+a.dataset.rating); });
+          if (mode === "reviews") list.sort(function (a, b) { return (+b.dataset.reviews) - (+a.dataset.reviews); });
+          if (mode === "name") list.sort(function (a, b) { return a.dataset.name.localeCompare(b.dataset.name); });
+          list.forEach(function (el) { grid.appendChild(el); });
+        });
+      })();
+      </script>
+      <!--/DEALS-->
+
     <section class="highlights-section">
         <h2>Trending This Week</h2>
         
@@ -299,93 +374,9 @@
     </section>
 
     <!-- Newsletter Section -->
-    <!-- DEAL:START -->
-<section class="shop-grid-section" id="deal-of-the-week">
-  <h2>Deal of the week</h2>
-  <div class="shop-grid">
-    <a href="components.html" class="shop-card featured">
-      <span class="shop-icon">🪑</span>
-      <h3>Noctua NH-D15 chromax.Black Dual-Tower CPU Cooler</h3>
-      <p>Dual-tower, 2x NF-A15 140mm fans: air cooling within a few degrees of 240mm AIOs · 165mm height — check case clearance before buying · 6-year</p>
-    </a>
-  </div>
-</section>
-<!-- DEAL:END -->
 
-<!--DEALS-->
-      <section class="deals-today" id="todays-picks">
-        <div class="deals-head">
-          <div>
-            <h2>Latest picks</h2>
-            <p class="deals-sub">What the daily batch is posting right now — newest first.</p>
-          </div>
-          <div class="deals-tools">
-            <label class="deals-sort">Sort by:
-              <select id="dealSort">
-                <option value="featured">Featured</option>
-                <option value="rating">Rating</option>
-                <option value="reviews">Most reviewed</option>
-                <option value="name">Name A–Z</option>
-              </select>
-            </label>
-            <span class="deals-count">4 products</span>
-          </div>
-        </div>
-        <div class="deals-grid" id="dealGrid">
-        <a class="deal-card" href="components.html"
-            data-name="noctua nh-d15 chromax.black dual-tower cpu cooler" data-rating="4.8" data-reviews="13534">
-            <span class="deal-body">
-              <span class="deal-title">Noctua NH-D15 chromax.Black Dual-Tower CPU Cooler</span>
-              <span class="deal-stars">★★★★☆ <b>13,534</b></span>
-              <span class="deal-cta">Check price on Amazon</span>
-            </span>
-          </a>
-        <a class="deal-card" href="components.html"
-            data-name="corsair 4000d airflow tempered glass mid-tower atx case" data-rating="4.8" data-reviews="19496">
-            <span class="deal-body">
-              <span class="deal-title">Corsair 4000D Airflow Tempered Glass Mid-Tower ATX Case</span>
-              <span class="deal-stars">★★★★☆ <b>19,496</b></span>
-              <span class="deal-cta">Check price on Amazon</span>
-            </span>
-          </a>
-        <a class="deal-card" href="cpu.html"
-            data-name="amd ryzen 5 5600x 6-core/12-thread desktop processor" data-rating="4.8" data-reviews="30268">
-            <span class="deal-body">
-              <span class="deal-title">AMD Ryzen 5 5600X 6-Core/12-Thread Desktop Processor</span>
-              <span class="deal-stars">★★★★☆ <b>30,268</b></span>
-              <span class="deal-cta">Check price on Amazon</span>
-            </span>
-          </a>
-        <a class="deal-card" href="components.html"
-            data-name="noctua nh-d15 dual tower cpu cooler" data-rating="4.8" data-reviews="3650">
-            <span class="deal-body">
-              <span class="deal-title">Noctua NH-D15 Dual Tower CPU Cooler</span>
-              <span class="deal-stars">★★★★☆ <b>3,650</b></span>
-              <span class="deal-cta">Check price on Amazon</span>
-            </span>
-          </a>
-        </div>
-        <p class="deals-more"><a href="categories.html">All categories →</a></p>
-      </section>
-      <script>
-      (function () {
-        var grid = document.getElementById("dealGrid");
-        var sel = document.getElementById("dealSort");
-        if (!grid || !sel) return;
-        var original = Array.prototype.slice.call(grid.children);
-        sel.addEventListener("change", function () {
-          var mode = sel.value;
-          var list = original.slice();
-          if (mode === "rating") list.sort(function (a, b) { return (+b.dataset.rating) - (+a.dataset.rating); });
-          if (mode === "reviews") list.sort(function (a, b) { return (+b.dataset.reviews) - (+a.dataset.reviews); });
-          if (mode === "name") list.sort(function (a, b) { return a.dataset.name.localeCompare(b.dataset.name); });
-          list.forEach(function (el) { grid.appendChild(el); });
-        });
-      })();
-      </script>
-      <!--/DEALS-->
 
-    <section class="newsletter-section">
+<section class="newsletter-section">
       <h2>Get Our Weekly Office Gear Deals</h2>
       <p>One email a week: the deals worth your time. No spam, unsubscribe any time.</p>
       <form class="newsletter-form" data-newsletter hidden>
