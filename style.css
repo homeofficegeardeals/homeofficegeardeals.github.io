@@ -1263,3 +1263,17 @@ img, svg, video, table { max-width: 100%; }
 .pick-grid > .top-pick .affiliate-link { margin-top: auto; text-align: center; }
 @media (max-width: 560px) { .pick-grid { grid-template-columns: 1fr; } }
 .pick-grid > .top-pick .product-info > .affiliate-link { order: 9; margin-top: auto; }
+
+/* ---------- Alignment fixes: homepage cards and the two card sections ---------- */
+/* Four highlights in one row instead of three plus an orphan. */
+.highlights-section { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
+@media (max-width: 1040px) { .highlights-section { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px)  { .highlights-section { grid-template-columns: 1fr; } }
+
+/* These cards carry their own border, so inset them to line up with the padded grids above. */
+.trust-section,
+.newsletter-section { max-width: min(1132px, calc(100% - 3rem)); }
+@media (max-width: 600px) {
+  .trust-section,
+  .newsletter-section { max-width: calc(100% - 2.3rem); padding-left: 1.15rem; padding-right: 1.15rem; }
+}
