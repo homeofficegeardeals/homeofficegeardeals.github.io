@@ -1277,3 +1277,10 @@ img, svg, video, table { max-width: 100%; }
   .trust-section,
   .newsletter-section { max-width: calc(100% - 2.3rem); padding-left: 1.15rem; padding-right: 1.15rem; }
 }
+
+/* ---------- Uniform cards: every row is the same height, no product photos ---------- */
+.pick-grid, .deals-grid { grid-auto-rows: 1fr; }
+.pick-grid > .top-pick, .highlights-section > .product-card, .deals-grid > .deal-card { height: 100%; }
+.pick-grid > .top-pick > h2 {
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
