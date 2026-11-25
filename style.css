@@ -1311,3 +1311,16 @@ img, svg, video, table { max-width: 100%; }
   box-shadow: 0 8px 22px rgba(15, 45, 34, .08);
 }
 .top-pick.our-pick > h2 { color: #173a2e; }
+
+/* ---------- Blog share row ---------- */
+.share-row {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .5rem;
+  margin: 1.6rem 0 .4rem; font-size: .88rem; color: var(--muted);
+}
+.share-row span { margin-right: .2rem; }
+.share-row a {
+  border: 1px solid var(--line); border-radius: 999px; background: #fff;
+  padding: .32rem .85rem; text-decoration: none; color: var(--ink);
+  transition: border-color .15s, background .15s;
+}
+.share-row a:hover { border-color: #b9d8c9; background: #f4f8f5; }
