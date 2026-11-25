@@ -1297,3 +1297,17 @@ img, svg, video, table { max-width: 100%; }
 .post-body h2 { margin-top: 1.9rem; font-size: 1.2rem; }
 .post-body ul { max-width: 62ch; }
 .post-body .affiliate-link { display: inline-block; margin-top: .6rem; }
+
+/* ---------- Section rhythm and "Our pick" ---------- */
+.deals-today { padding-bottom: 3.25rem; }
+.deals-head { margin-bottom: 1.4rem; }
+.deals-tools { align-self: center; }
+.badge.our-pick {
+  background: #1f4d3d; color: #fff; border: 1px solid #1f4d3d;
+  letter-spacing: .06em;
+}
+.top-pick.our-pick {
+  border-color: #9fc7b5;
+  box-shadow: 0 8px 22px rgba(15, 45, 34, .08);
+}
+.top-pick.our-pick > h2 { color: #173a2e; }
