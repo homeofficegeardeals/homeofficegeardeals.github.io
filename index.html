@@ -221,6 +221,8 @@
 
 
 
+
+
 <!--DEALS-->
       <section class="deals-today" id="todays-picks">
         <div class="deals-head">
@@ -229,31 +231,23 @@
             <p class="deals-sub">What the daily batch is posting right now — newest first.</p>
           </div>
           <div class="deals-tools">
-            <label class="deals-sort">Sort by:
-              <select id="dealSort">
-                <option value="featured">Featured</option>
-                <option value="rating">Rating</option>
-                <option value="reviews">Most reviewed</option>
-                <option value="name">Name A–Z</option>
-              </select>
-            </label>
             <span class="deals-count">4 products</span>
           </div>
         </div>
         <div class="deals-grid" id="dealGrid">
-        <a class="deal-card" href="kitchen.html"
-            data-name="victorinox fibrox pro 8-inch chef's knife" data-rating="4.8" data-reviews="15035">
-            <span class="deal-body">
-              <span class="deal-title">Victorinox Fibrox Pro 8-Inch Chef's Knife</span>
-              <span class="deal-stars">★★★★☆ <b>15,035</b></span>
-              <span class="deal-cta">Check price on Amazon</span>
-            </span>
-          </a>
         <a class="deal-card" href="webcams/webcams.html"
             data-name="logitech brio 4k ultra hd" data-rating="4.5" data-reviews="1366">
             <span class="deal-body">
               <span class="deal-title">Logitech Brio 4K Ultra HD</span>
               <span class="deal-stars">★★★★☆ <b>1,366</b></span>
+              <span class="deal-cta">Check price on Amazon</span>
+            </span>
+          </a>
+        <a class="deal-card" href="kitchen.html"
+            data-name="victorinox fibrox pro 8-inch chef's knife" data-rating="4.8" data-reviews="15035">
+            <span class="deal-body">
+              <span class="deal-title">Victorinox Fibrox Pro 8-Inch Chef's Knife</span>
+              <span class="deal-stars">★★★★☆ <b>15,035</b></span>
               <span class="deal-cta">Check price on Amazon</span>
             </span>
           </a>
@@ -274,24 +268,7 @@
             </span>
           </a>
         </div>
-        <p class="deals-more"><a href="categories.html">All categories →</a></p>
       </section>
-      <script>
-      (function () {
-        var grid = document.getElementById("dealGrid");
-        var sel = document.getElementById("dealSort");
-        if (!grid || !sel) return;
-        var original = Array.prototype.slice.call(grid.children);
-        sel.addEventListener("change", function () {
-          var mode = sel.value;
-          var list = original.slice();
-          if (mode === "rating") list.sort(function (a, b) { return (+b.dataset.rating) - (+a.dataset.rating); });
-          if (mode === "reviews") list.sort(function (a, b) { return (+b.dataset.reviews) - (+a.dataset.reviews); });
-          if (mode === "name") list.sort(function (a, b) { return a.dataset.name.localeCompare(b.dataset.name); });
-          list.forEach(function (el) { grid.appendChild(el); });
-        });
-      })();
-      </script>
       <!--/DEALS-->
 
     <section class="highlights-section">
