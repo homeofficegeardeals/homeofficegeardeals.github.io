@@ -80,7 +80,7 @@
       if (countEl) countEl.textContent = "Showing " + shownAll + " of " + allCards.length;
     }
 
-    // "Hide filters" toggle sits above the chips, like the reference layout.
+    // "Hide filters" is its own button above the filter menu.
     var toggle = document.createElement("button");
     toggle.type = "button";
     toggle.className = "filter-toggle";
@@ -92,7 +92,7 @@
       toggle.textContent = collapsed ? "Hide filters" : "Show filters";
       toggle.setAttribute("aria-expanded", collapsed ? "true" : "false");
     });
-    box.appendChild(toggle);
+    box.parentNode.insertBefore(toggle, box);
 
     chips.forEach(function (c, i) {
       var b = document.createElement("button");

@@ -1420,3 +1420,12 @@ img, svg, video, table { max-width: 100%; }
   .main-nav .nav-body{order:3 !important;width:100%;flex-direction:column;align-items:flex-start}
   .main-nav .nav-search{order:4;width:100%}
 }
+
+/* Sidebar: standalone Hide filters button above the menu, aligned with the cards */
+.cat-sidebar{display:flex;flex-direction:column;gap:12px;position:sticky;top:96px}
+.filter-toggle{width:100%;padding:10px 14px;border:1px solid #d7dee8;border-radius:999px;background:#fff;color:#33475f;font:inherit;font-size:.9rem;cursor:pointer}
+.filter-toggle:hover{border-color:#94a3b8;background:#f8fafc}
+.cat-sidebar .picks-filters{margin:0}
+
+/* Tidy the hero schedule line */
+.hero-note{line-height:1.5;margin:20px auto 0;max-width:640px;font-size:.86rem;color:#9fb6d1}
