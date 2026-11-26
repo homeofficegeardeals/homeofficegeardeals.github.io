@@ -1347,3 +1347,22 @@ img, svg, video, table { max-width: 100%; }
 .cta-button.ghost{background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff}
 .hero-note{margin:22px 0 0;font-size:.85rem;color:#94a3b8}
 @media (max-width:600px){.hero{padding:64px 18px 56px}.hero-search{flex-direction:column}.hero-search button{width:100%}}
+
+/* Deep blue editorial hero */
+.hero{background:radial-gradient(1100px 520px at 50% -10%, #1d4e80 0%, rgba(29,78,128,0) 62%), linear-gradient(160deg,#08192c 0%,#0e2a4a 58%,#0a1f38 100%);color:#f8fafc;border-bottom:1px solid rgba(255,255,255,.06)}
+.hero h1{color:#fff}
+
+/* Guide page: sticky filter sidebar beside the cards */
+.cat-layout{display:grid;grid-template-columns:236px minmax(0,1fr);gap:30px;align-items:start;margin-top:6px}
+.cat-sidebar{position:sticky;top:96px}
+.picks-filters{display:flex;flex-direction:column;align-items:stretch;gap:8px;padding:16px;border:1px solid #e2e8f0;border-radius:14px;background:#fff}
+.picks-filters::before{content:'Filter by';font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:#64748b;margin-bottom:2px}
+.picks-filters button{display:flex;justify-content:space-between;align-items:center;width:100%;text-align:left;border-radius:10px}
+.picks-filters .filter-count{margin:10px 0 0;padding-top:10px;border-top:1px solid #eef2f7;font-size:.82rem}
+@media (max-width:900px){
+  .cat-layout{grid-template-columns:1fr;gap:16px}
+  .cat-sidebar{position:static}
+  .picks-filters{flex-direction:row;flex-wrap:wrap}
+  .picks-filters button{width:auto}
+  .picks-filters .filter-count{width:100%;border-top:0;padding-top:4px;margin-top:0}
+}
