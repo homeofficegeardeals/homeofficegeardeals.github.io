@@ -25,7 +25,7 @@
     "home-goods": [["Vacuums", /vacuum/i], ["Cleaning", /clean|mop|spray/i], ["Storage", /storage|bin|organis/i]],
     "small-appliances": [["Coffee", /coffee|espresso|brewer/i], ["Air fryers", /air fryer/i], ["Blenders", /blender/i]],
     "kitchen": [["Knives", /knife|knives/i], ["Pans", /pan|skillet|cast iron/i], ["Coffee", /coffee|espresso/i]],
-    "clothing": [["Socks", /sock/i], ["Bags", /backpack|bag/i], ["Tops", /shirt|tee\b|top/i]],
+    "clothing": [["Men", /\bmen['’]?s\b|\bmens\b/i], ["Women", /\bwomen['’]?s\b|\bwomens\b|\bwoman\b/i], ["Unisex", /backpack|merino|darn tough/i], ["Boys", /\bboys?['’]?\b/i], ["Girls", /\bgirls?['’]?\b/i], ["Socks", /sock/i], ["Bags", /backpack|bag/i], ["Tops", /shirt|tee\b|top/i]],
     "components": [["Coolers", /cooler|nh-d15/i], ["Power supplies", /psu|power supply/i], ["Cases", /\bcase\b/i]]
   };
 
@@ -56,7 +56,9 @@
     var chips = [["All", null]];
     rules.forEach(function (r) {
       var n = cards.filter(function (c) { return r[1].test(c.textContent); }).length;
-      if (n >= 2) chips.push([r[0], r[1], n]);
+      // Audience chips (Men/Women/Boys/Girls) are useful even with a single item.
+      var min = /^(Men|Women|Boys|Girls)$/.test(r[0]) ? 1 : 2;
+      if (n >= min) chips.push([r[0], r[1], n]);
     });
     if (chips.length < 2) return;
 
