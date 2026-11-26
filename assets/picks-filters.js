@@ -7,7 +7,7 @@
   var slug = path.replace(/\/index\.html$/, "/").replace(/\.html$/, "");
 
   var CONFIG = {
-    "monitors": [["Gaming", /gaming|hz|freesync|g-sync/i], ["4K", /\b4k\b|uhd/i], ["QHD", /qhd|1440/i], ["24-inch", /\b24\b|23\.8|24\.1/i], ["USB-C", /usb-c|displayport/i]],
+    "monitors": [["Gaming", /gaming|hz|freesync|g-sync/i], ["4K", /\b4k\b|uhd/i], ["QHD", /qhd|1440/i], ["24-inch", /23\.8|24\.1|24mh|24 inch|24-inch/i], ["USB-C", /usb-c/i]],
     "chairs/ergonomic-chairs": [["Mesh", /mesh/i], ["Ergonomic", /ergonomic|lumbar/i], ["Premium", /herman|steelcase|aeron|leap/i]],
     "desks/standing-desks": [["Standing", /standing|sit-stand/i], ["Converters", /converter|riser/i], ["Dual motor", /dual motor|frame/i]],
     "webcams/webcams": [["1080p", /1080/i], ["4K", /\b4k\b/i], ["Privacy shutter", /shutter/i], ["Streaming", /brio|stream/i]],
