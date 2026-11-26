@@ -104,7 +104,6 @@
       if (r.re.test(raw) && r.page.test(item.page + " " + page)) s += 4;
     });
     if (item.pick) s += 0.75;
-    if (item.rating) s += Math.min(Number(item.rating), 5) * 0.15;
     return s;
   }
 
@@ -163,7 +162,7 @@
       card.className = "advisor-card";
       card.innerHTML =
         "<strong>" + it.name + "</strong>" +
-        "<span>" + why(it, expanded, raw) + (it.rating ? " · " + it.rating + "/5" + (it.reviews ? " (" + it.reviews.toLocaleString() + " reviews)" : "") : "") + "</span>" +
+        "<span>" + why(it, expanded, raw) + "</span>" +
         '<a href="' + root + it.page + '">See it in the guide</a>' +
         (it.asin ? '<a href="https://www.amazon.com/dp/' + it.asin + '?tag=homeoffic049c-20" target="_blank" rel="nofollow sponsored">Check price</a>' : "");
       out.appendChild(card);
