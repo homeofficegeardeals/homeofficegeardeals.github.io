@@ -1429,3 +1429,7 @@ img, svg, video, table { max-width: 100%; }
 
 /* Tidy the hero schedule line */
 .hero-note{line-height:1.5;margin:20px auto 0;max-width:640px;font-size:.86rem;color:#9fb6d1}
+
+/* Collapsed filter menu disappears completely, leaving the toggle button */
+.picks-filters[data-collapsed="true"]{display:none}
+.cat-sidebar{margin-top:4px}
