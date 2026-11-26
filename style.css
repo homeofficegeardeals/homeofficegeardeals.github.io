@@ -1366,3 +1366,22 @@ img, svg, video, table { max-width: 100%; }
   .picks-filters button{width:auto}
   .picks-filters .filter-count{width:100%;border-top:0;padding-top:4px;margin-top:0}
 }
+
+/* Wide editorial layout */
+.product-page{max-width:1440px;margin:0 auto;padding:32px 24px}
+.pick-grid{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+
+/* Guide header banner */
+.cat-head{position:relative;overflow:hidden;border-radius:18px;padding:56px 32px;margin:0 0 22px;background-color:#0f3057;background-size:cover;background-position:center;color:#fff}
+.cat-head::before{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(8,25,44,.92) 0%,rgba(10,32,56,.72) 55%,rgba(10,32,56,.45) 100%)}
+.cat-head>*{position:relative;z-index:1}
+.cat-head h1{color:#fff;margin:0}
+.cat-head .back-link{border-color:rgba(255,255,255,.5);color:#fff}
+.cat-head .back-link:hover{background:#fff;color:#0f3057;border-color:#fff}
+@media (max-width:600px){.cat-head{padding:36px 20px;border-radius:14px}}
+
+/* Blue footer */
+.main-footer{background:#0f3057;color:#cfe0f5;border-top:1px solid rgba(255,255,255,.08)}
+.main-footer a{color:#cfe0f5}
+.main-footer a:hover{color:#fff}
+.main-footer .footer-bottom{color:#9fb6d1;border-top-color:rgba(255,255,255,.12)}
