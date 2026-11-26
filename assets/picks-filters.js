@@ -33,10 +33,13 @@
   if (!rules) return;
 
   var CSS = "" +
-    ".picks-filters{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}" +
-    ".picks-filters button{border:1px solid #c7d0da;background:#fff;color:#1f2937;border-radius:999px;padding:7px 14px;font:inherit;font-size:.9rem;cursor:pointer}" +
+    ".picks-filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:14px 16px;border:1px solid #e2e8f0;border-radius:14px;background:#fff;margin:18px 0 20px}" +
+    ".picks-filters::before{content:'Filter by';font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin-right:4px}" +
+    ".picks-filters button{border:1px solid #d7dee8;background:#fff;color:#1f2937;border-radius:999px;padding:7px 14px;font:inherit;font-size:.9rem;cursor:pointer;transition:background .15s,color .15s,border-color .15s}" +
+    ".picks-filters button:hover{border-color:#94a3b8}" +
     ".picks-filters button[aria-pressed=true]{background:#111827;color:#fff;border-color:#111827}" +
-    ".picks-filters button span{opacity:.6;margin-left:6px;font-size:.8em}";
+    ".picks-filters button span{margin-left:6px;font-size:.8em;opacity:.65}" +
+    ".picks-filters .filter-count{margin-left:auto;font-size:.85rem;color:#64748b;white-space:nowrap}";
 
   function init() {
     var box = document.querySelector("[data-filters]");
@@ -72,6 +75,8 @@
         if (hit && grid.contains(c)) shown++;
       });
       if (countEl) countEl.textContent = shown + (shown === 1 ? " pick" : " picks");
+      var fc = box.querySelector(".filter-count");
+      if (fc) fc.textContent = "Showing " + shown + " of " + allCards.length;
     }
 
     chips.forEach(function (c, i) {
@@ -83,10 +88,15 @@
         box.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", "false"); });
         b.setAttribute("aria-pressed", "true");
         if (c[1]) apply(c[1]);
-        else { allCards.forEach(function (x) { x.style.display = ""; }); if (countEl) countEl.textContent = baseCount + " picks"; }
+        else { allCards.forEach(function (x) { x.style.display = ""; }); if (countEl) countEl.textContent = baseCount + " picks"; var fc2 = box.querySelector(".filter-count"); if (fc2) fc2.textContent = "Showing " + baseCount + " of " + allCards.length; }
       });
       box.appendChild(b);
     });
+
+    var counter = document.createElement("span");
+    counter.className = "filter-count";
+    counter.textContent = "Showing " + baseCount + " of " + allCards.length;
+    box.appendChild(counter);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

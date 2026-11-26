@@ -1332,3 +1332,18 @@ img, svg, video, table { max-width: 100%; }
 .cat-head h1{margin:0}
 .cat-head .back-link{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid #c7d0da;border-radius:50%;text-decoration:none;color:#111827;font-size:1.05rem;line-height:1;flex:0 0 auto}
 .cat-head .back-link:hover,.cat-head .back-link:focus{background:#111827;color:#fff;border-color:#111827}
+
+/* Editorial hero */
+.hero{padding:96px 24px 80px}
+.hero-content{max-width:840px;margin:0 auto;text-align:center}
+.hero-kicker{text-transform:uppercase;letter-spacing:.18em;font-size:.75rem;opacity:.7;margin:0 0 18px}
+.hero h1{font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.05;margin:0 0 18px}
+.hero-sub{font-size:1.05rem;color:#cbd5e1;max-width:640px;margin:0 auto 28px}
+.hero-search{display:flex;gap:8px;max-width:580px;margin:0 auto 24px}
+.hero-search input{flex:1;min-width:0;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;font:inherit}
+.hero-search input::placeholder{color:#94a3b8}
+.hero-search button{padding:14px 22px;border:0;border-radius:12px;background:#fff;color:#0f172a;font:inherit;cursor:pointer}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.cta-button.ghost{background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff}
+.hero-note{margin:22px 0 0;font-size:.85rem;color:#94a3b8}
+@media (max-width:600px){.hero{padding:64px 18px 56px}.hero-search{flex-direction:column}.hero-search button{width:100%}}
