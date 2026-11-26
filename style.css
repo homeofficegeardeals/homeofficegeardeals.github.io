@@ -1385,3 +1385,19 @@ img, svg, video, table { max-width: 100%; }
 .main-footer a{color:#cfe0f5}
 .main-footer a:hover{color:#fff}
 .main-footer .footer-bottom{color:#9fb6d1;border-top-color:rgba(255,255,255,.12)}
+
+/* Mobile nav: burger sits left of the wordmark */
+@media (max-width:760px){
+  .main-nav:not(.footer-nav){flex-wrap:wrap;justify-content:flex-start;align-items:center;gap:.55rem;padding:.6rem 1rem}
+  .main-nav .nav-burger{order:-1;margin:0;flex:0 0 auto}
+  .main-nav .nav-logo{order:0;flex:1 1 auto;display:flex;align-items:center;justify-content:flex-start;min-width:0}
+  .main-nav .nav-logo a{font-size:.96rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .main-nav .nav-body{order:3;width:100%}
+  .main-nav .nav-search{order:4;width:100%}
+}
+
+/* Hero buttons sit side by side on phones */
+@media (max-width:600px){
+  .hero-actions{flex-wrap:nowrap;gap:8px;align-items:stretch}
+  .hero-actions .cta-button{flex:1 1 0;min-width:0;padding:12px 8px;font-size:.82rem;line-height:1.2;text-align:center;white-space:normal}
+}
