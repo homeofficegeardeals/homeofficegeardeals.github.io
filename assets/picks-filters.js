@@ -25,7 +25,7 @@
     "home-goods": [["Vacuums", /vacuum/i], ["Cleaning", /clean|mop|spray/i], ["Storage", /storage|bin|organis/i]],
     "small-appliances": [["Coffee", /coffee|espresso|brewer/i], ["Air fryers", /air fryer/i], ["Blenders", /blender/i]],
     "kitchen": [["Knives", /knife|knives/i], ["Pans", /pan|skillet|cast iron/i], ["Coffee", /coffee|espresso/i]],
-    "clothing": [["Men", /\bmen['’]?s\b|\bmens\b/i], ["Women", /\bwomen['’]?s\b|\bwomens\b|\bwoman\b/i], ["Unisex", /backpack|merino|darn tough/i], ["Boys", /\bboys?['’]?\b/i], ["Girls", /\bgirls?['’]?\b/i], ["Socks", /sock/i], ["Bags", /backpack|bag/i], ["Tops", /shirt|tee\b|top/i]],
+    "clothing": [["Men", /\bmen['â€™]?s\b|\bmens\b/i], ["Women", /\bwomen['â€™]?s\b|\bwomens\b|\bwoman\b/i], ["Unisex", /backpack|merino|darn tough/i], ["Boys", /\bboys?['â€™]?\b/i], ["Girls", /\bgirls?['â€™]?\b/i], ["Socks", /sock/i], ["Bags", /backpack|bag/i], ["Tops", /shirt|tee\b|top/i]],
     "components": [["Coolers", /cooler|nh-d15/i], ["Power supplies", /psu|power supply/i], ["Cases", /\bcase\b/i]]
   };
 
@@ -39,7 +39,10 @@
     ".picks-filters button:hover{border-color:#94a3b8}" +
     ".picks-filters button[aria-pressed=true]{background:#111827;color:#fff;border-color:#111827}" +
     ".picks-filters button span{margin-left:6px;font-size:.8em;opacity:.65}" +
-    ".picks-filters .filter-count{margin-left:auto;font-size:.85rem;color:#64748b;white-space:nowrap}";
+    ".picks-filters .filter-toggle{width:100%;padding:9px 12px;border:1px solid #d7dee8;border-radius:10px;background:#fff;color:#33475f;font:inherit;font-size:.9rem;cursor:pointer;margin-bottom:4px;order:-2}" +
+    ".picks-filters::before{order:-1}" +
+    ".picks-filters[data-collapsed=true] button:not(.filter-toggle){display:none}" +
+    ".picks-filters[data-collapsed=true]::before{display:none}";
 
   function init() {
     var box = document.querySelector("[data-filters]");
@@ -74,10 +77,22 @@
         c.style.display = hit ? "" : "none";
         if (hit) { shownAll++; if (grid.contains(c)) shownGrid++; }
       });
-      if (countEl) countEl.textContent = shownGrid + (shownGrid === 1 ? " pick" : " picks");
-      var fc = box.querySelector(".filter-count");
-      if (fc) fc.textContent = "Showing " + shownAll + " of " + allCards.length;
+      if (countEl) countEl.textContent = "Showing " + shownAll + " of " + allCards.length;
     }
+
+    // "Hide filters" toggle sits above the chips, like the reference layout.
+    var toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "filter-toggle";
+    toggle.textContent = "Hide filters";
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.addEventListener("click", function () {
+      var collapsed = box.getAttribute("data-collapsed") === "true";
+      box.setAttribute("data-collapsed", collapsed ? "false" : "true");
+      toggle.textContent = collapsed ? "Hide filters" : "Show filters";
+      toggle.setAttribute("aria-expanded", collapsed ? "true" : "false");
+    });
+    box.appendChild(toggle);
 
     chips.forEach(function (c, i) {
       var b = document.createElement("button");
@@ -88,15 +103,13 @@
         box.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", "false"); });
         b.setAttribute("aria-pressed", "true");
         if (c[1]) apply(c[1]);
-        else { allCards.forEach(function (x) { x.style.display = ""; }); if (countEl) countEl.textContent = baseCount + " picks"; var fc2 = box.querySelector(".filter-count"); if (fc2) fc2.textContent = "Showing " + allCards.length + " of " + allCards.length; }
+        else { allCards.forEach(function (x) { x.style.display = ""; }); if (countEl) countEl.textContent = "Showing " + allCards.length + " of " + allCards.length; }
       });
       box.appendChild(b);
     });
 
-    var counter = document.createElement("span");
-    counter.className = "filter-count";
-    counter.textContent = "Showing " + allCards.length + " of " + allCards.length;
-    box.appendChild(counter);
+    // Initial state: everything shown, counter reads "Showing N of N".
+    apply(null);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
