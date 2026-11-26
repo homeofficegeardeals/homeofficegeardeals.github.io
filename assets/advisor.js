@@ -50,7 +50,8 @@
   ];
 
   var CSS = "" +
-    ".advisor{max-width:1180px;margin:0 auto 2.5rem;padding:18px 1.5rem 0;box-sizing:border-box}" +
+    ".advisor{max-width:1180px;margin:26px auto;padding:0 1.5rem;box-sizing:border-box}" +
+    ".product-page .advisor{max-width:none;margin:0 0 1.5rem;padding:0}" +
     ".advisor-inner{border:1px solid #d8dee6;border-radius:14px;padding:20px 20px 16px;background:#fbfcfe}" +
     ".advisor h2{margin:0 0 6px;font-size:1.05rem}" +
     ".advisor p.advisor-hint{margin:0 0 12px;color:#5b6472;font-size:.92rem}" +
