@@ -10,6 +10,6 @@
 */
 window.NEWSLETTER_CONFIG = {
   provider: "substack",
-  endpoint: "https://homeofficegeardeals.substack.com",
+  endpoint: "",
   checklist: "assets/welcome-offer-home-office-hacks.pdf",
 };

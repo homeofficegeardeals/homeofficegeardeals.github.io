@@ -1433,3 +1433,58 @@ img, svg, video, table { max-width: 100%; }
 /* Collapsed filter menu disappears completely, leaving the toggle button */
 .picks-filters[data-collapsed="true"]{display:none}
 .cat-sidebar{margin-top:4px}
+
+/* ============================================================
+   Spacing system (final pass): one rhythm across the site
+   ============================================================ */
+:root{
+  --section-space:3rem;
+  --card-gap:1.25rem;
+  --card-padding:1.25rem;
+  --stack-xs:.5rem;
+  --stack-sm:.75rem;
+  --stack-md:1.25rem;
+}
+
+/* Section rhythm */
+.shop-grid-section,.highlights-section,.bonus-cta-section,.trust-section,.newsletter-section{
+  margin-bottom:var(--section-space);
+}
+.cat-layout,.advisor{margin-bottom:var(--stack-md)}
+
+/* Headings and their intro copy */
+.shop-grid-section > h2,.highlights-section > h2,.product-grid-section > h2,.trust-section > h2,.newsletter-section > h2{margin:0 0 var(--stack-xs)}
+.shop-grid-section > p,.highlights-section > p{margin:0 0 var(--stack-md)}
+h1 + p,h2 + p{line-height:1.6}
+
+/* Grids share one gap */
+.shop-grid,.pick-grid,.product-grid,.trust-grid{gap:var(--card-gap)}
+.shop-grid{margin-top:var(--stack-md)}
+
+/* Cards share one padding */
+.shop-card,.product-card,.top-pick,.advisor-inner,.cat-head,.bonus-content,.newsletter-section{
+  padding:var(--card-padding);
+}
+.shop-card{gap:var(--stack-xs);display:flex;flex-direction:column;height:100%}
+.product-card,.top-pick{display:flex;flex-direction:column;height:100%}
+.product-card .product-info,.top-pick .product-info{gap:var(--stack-sm);display:flex;flex-direction:column;flex:1}
+.top-pick .affiliate-link,.product-card .affiliate-link{margin-top:auto}
+
+/* Trust + newsletter blocks */
+.trust-grid{row-gap:var(--stack-md)}
+.newsletter-section{padding:2rem 1.5rem}
+
+/* Footer spacing and consistency */
+.main-footer{padding:2.5rem 1.5rem 1.25rem}
+.main-footer .footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));column-gap:2rem;row-gap:1.75rem}
+.main-footer .footer-nav{display:flex;flex-direction:column;gap:.45rem}
+.main-footer .footer-bottom{margin-top:1.75rem;padding-top:1.25rem}
+
+/* Phone rhythm */
+@media (max-width:760px){
+  :root{--section-space:2.25rem;--card-gap:1rem;--card-padding:1rem}
+  .shop-grid-section,.highlights-section,.bonus-cta-section,.product-grid-section{padding-left:1rem;padding-right:1rem}
+  .trust-section,.newsletter-section{margin-left:1rem;margin-right:1rem;padding:1.35rem}
+  .bonus-content{padding:1.35rem}
+  .main-footer{padding:2rem 1rem 1rem}
+}
