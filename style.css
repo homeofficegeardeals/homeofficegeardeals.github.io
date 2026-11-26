@@ -1540,3 +1540,11 @@ h1 + p,h2 + p{line-height:1.6}
 /* Affiliate buttons: one size everywhere */
 .affiliate-button,.affiliate-link{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;font-size:.92rem;line-height:1.2;border-radius:999px;width:auto;max-width:100%}
 .product-card .affiliate-button,.top-pick .affiliate-link{width:100%}
+
+/* Guides section: full width, four equal cards */
+.guides-section{display:block;width:100%}
+.guides-section .guide-grid{display:grid !important;grid-template-columns:repeat(4,minmax(0,1fr)) !important;gap:20px;width:100%;align-items:stretch}
+.guides-section .guide-card{min-width:0;width:auto}
+.guides-section .guide-body strong{overflow-wrap:anywhere}
+@media (max-width:1000px){.guides-section .guide-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
+@media (max-width:560px){.guides-section .guide-grid{grid-template-columns:1fr !important}}
