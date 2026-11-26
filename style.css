@@ -1513,3 +1513,30 @@ h1 + p,h2 + p{line-height:1.6}
 .shop-icon{display:none}
 @media (max-width:900px){.shop-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.shop-grid{grid-template-columns:1fr}.shop-thumb{height:140px}}
+
+/* Shop by Category: navy photo cards, like the hero */
+.shop-card{background:#0f3057;border-color:rgba(255,255,255,.06);color:#fff;position:relative;isolation:isolate}
+.shop-card::before{content:'';position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,rgba(9,30,53,.45) 0%,rgba(9,30,53,.92) 72%)}
+.shop-card>*{position:relative;z-index:1}
+.shop-card h3{color:#fff}
+.shop-card p{color:#cfe0f5}
+.shop-card .shop-thumb{height:132px}
+.shop-card:hover{box-shadow:0 14px 30px rgba(15,48,87,.22)}
+
+/* Buying-guide cards */
+.guides-section .section-sub{margin:0 0 18px;color:#5b6b80}
+.guide-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.guide-card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;text-decoration:none;color:inherit;transition:transform .15s ease,box-shadow .15s ease}
+.guide-card:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(15,48,87,.10)}
+.guide-thumb{display:block;height:120px;background-size:cover;background-position:center}
+.guide-body{display:flex;flex-direction:column;gap:6px;padding:14px 16px 16px}
+.guide-kicker{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#64748b}
+.guide-body strong{font-size:.98rem;line-height:1.3}
+.guide-meta{font-size:.82rem;color:#64748b}
+.guides-more{margin:18px 0 0}
+@media (max-width:1000px){.guide-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.guide-grid{grid-template-columns:1fr}}
+
+/* Affiliate buttons: one size everywhere */
+.affiliate-button,.affiliate-link{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;font-size:.92rem;line-height:1.2;border-radius:999px;width:auto;max-width:100%}
+.product-card .affiliate-button,.top-pick .affiliate-link{width:100%}
