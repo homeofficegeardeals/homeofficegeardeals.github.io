@@ -1488,3 +1488,11 @@ h1 + p,h2 + p{line-height:1.6}
   .bonus-content{padding:1.35rem}
   .main-footer{padding:2rem 1rem 1rem}
 }
+
+/* Breathe under the hero buttons */
+.hero .hero-note{margin:34px auto 0 !important;line-height:1.6 !important;font-size:.88rem;max-width:620px}
+
+/* Sidebar starts level with the first card, not with the toolbar */
+@media (min-width:901px){
+  .cat-sidebar{padding-top:76px}
+}
