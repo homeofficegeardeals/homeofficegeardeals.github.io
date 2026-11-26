@@ -1496,3 +1496,20 @@ h1 + p,h2 + p{line-height:1.6}
 @media (min-width:901px){
   .cat-sidebar{padding-top:76px}
 }
+
+/* Homepage: visual category cards + refined blue palette */
+:root{
+  --brand:#123b68;
+  --accent:#2676d9;
+  --bg:#f5f8fc;
+  --line:#e3ecf7;
+}
+.shop-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.shop-card{position:relative;padding:0;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:#fff;transition:transform .15s ease,box-shadow .15s ease;text-decoration:none;color:inherit}
+.shop-card:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(15,48,87,.10)}
+.shop-thumb{display:block;height:120px;background-size:cover;background-position:center;margin:0}
+.shop-card h3{margin:14px 16px 6px;font-size:1rem}
+.shop-card p{margin:0 16px 16px;color:#5b6b80;font-size:.9rem;line-height:1.5}
+.shop-icon{display:none}
+@media (max-width:900px){.shop-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.shop-grid{grid-template-columns:1fr}.shop-thumb{height:140px}}
