@@ -50,12 +50,14 @@
     }
 
     var cards = Array.prototype.slice.call(grid.querySelectorAll("section.top-pick"));
+    // The hero "Our pick" sits outside the grid but should count and filter too.
+    var allCards = Array.prototype.slice.call(document.querySelectorAll("section.top-pick"));
     var countEl = document.querySelector(".pick-count");
     var baseCount = cards.length;
 
     var chips = [["All", null]];
     rules.forEach(function (r) {
-      var n = cards.filter(function (c) { return r[1].test(c.textContent); }).length;
+      var n = allCards.filter(function (c) { return r[1].test(c.textContent); }).length;
       // Audience chips (Men/Women/Boys/Girls) are useful even with a single item.
       var min = /^(Men|Women|Boys|Girls)$/.test(r[0]) ? 1 : 2;
       if (n >= min) chips.push([r[0], r[1], n]);
@@ -64,13 +66,12 @@
 
     function apply(re) {
       var shown = 0;
-      cards.forEach(function (c) {
+      allCards.forEach(function (c) {
         var hit = !re || re.test(c.textContent);
         c.style.display = hit ? "" : "none";
-        if (hit) shown++;
+        if (hit && grid.contains(c)) shown++;
       });
       if (countEl) countEl.textContent = shown + (shown === 1 ? " pick" : " picks");
-      if (shown === 0 && countEl) countEl.textContent = "No " + "matches";
     }
 
     chips.forEach(function (c, i) {
@@ -82,7 +83,7 @@
         box.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", "false"); });
         b.setAttribute("aria-pressed", "true");
         if (c[1]) apply(c[1]);
-        else { cards.forEach(function (x) { x.style.display = ""; }); if (countEl) countEl.textContent = baseCount + " picks"; }
+        else { allCards.forEach(function (x) { x.style.display = ""; }); if (countEl) countEl.textContent = baseCount + " picks"; }
       });
       box.appendChild(b);
     });
