@@ -129,7 +129,23 @@
       return;
     }
     var expanded = expand(words);
-    var ranked = data.items
+    // If the request names a product type, only that type is eligible - "quiet keyboard" should
+    // return keyboards, not the quietest headphones.
+    var types = Object.keys(SYN).filter(function (k) {
+      return words.indexOf(stem(k)) >= 0 || words.some(function (w) { return stem(k) === w || (stem(k).length > 3 && w.indexOf(stem(k)) === 0); });
+    });
+    var pool = data.items;
+    if (types.length) {
+      pool = data.items.filter(function (it) {
+        var hay = (it.name + " " + (it.pageTitle || "") + " " + (it.page || "")).toLowerCase();
+        return types.some(function (t) {
+          if (hay.indexOf(t) >= 0) return true;
+          return (SYN[t] || []).some(function (s) { return hay.indexOf(s) >= 0; });
+        });
+      });
+      if (!pool.length) pool = data.items;
+    }
+    var ranked = pool
       .map(function (it) { return { it: it, s: score(it, expanded, raw) }; })
       .filter(function (x) { return x.s >= 4; })
       .sort(function (a, b) { return b.s - a.s; })
