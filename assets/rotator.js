@@ -25,40 +25,10 @@ window.PICKS = [
   "tag": "Water-repellent fabric rated for rain commutes, not just splash resistance"
  },
  {
-  "name": "Noctua NH-D15 Dual Tower CPU Cooler",
-  "page": "components.html",
-  "guide": "Other Components",
-  "tag": "Dual NF-A15 140mm PWM fans with 6 heatpipes — air cooling that matches 240mm A…"
- },
- {
-  "name": "AMD Ryzen 7 5800X3D 8-Core 16-Thread Desktop Processor with 3D V-Cache",
-  "page": "cpu.html",
-  "guide": "Processors",
-  "tag": "96MB L3 cache via 3D V-Cache — the single biggest gaming uplift on AM4, often …"
- },
- {
   "name": "Vari Classic Electric Standing Desk 60x30",
   "page": "desks/standing-desks.html",
   "guide": "Standing Desks",
   "tag": "Dual motors lift the 60x30 top"
- },
- {
-  "name": "CalDigit TS3 Plus Thunderbolt 3 Dock",
-  "page": "docking-stations.html",
-  "guide": "Docking Stations",
-  "tag": "15 ports including 2x Thunderbolt 3 40Gb/s and DisplayPort 1.2"
- },
- {
-  "name": "GIGABYTE GeForce RTX 4070 WINDFORCE OC 12G",
-  "page": "gpu.html",
-  "guide": "Graphics Cards",
-  "tag": "12GB GDDR6X, 192-bit for 1440p headroom"
- },
- {
-  "name": "Samsung 870 EVO SATA III 2.5\" Internal SSD 2TB (MZ-77E2T0B/AM)",
-  "page": "hard-drives.html",
-  "guide": "Hard Drives & SSDs",
-  "tag": "SATA III 2.5-inch, up to 560 MB/s read / 530 MB/s write"
  },
  {
   "name": "Sony WH-1000XM4 Wireless Noise Cancelling Headphones",
@@ -79,40 +49,16 @@ window.PICKS = [
   "tag": "Lift-Away pod detaches for stairs, upholstery and above-floor cleaning"
  },
  {
-  "name": "Herman Miller Aeron (new, Graphite)",
-  "page": "kit-roundup/complete-kit.html",
-  "guide": "Complete Home Office Kit",
-  "tag": "12-year warranty"
- },
- {
   "name": "Victorinox Fibrox Pro Chef's Knife, 8 Inch",
   "page": "kitchen.html",
   "guide": "Kitchen Cookware & Knives",
   "tag": "Stamped high-carbon Swiss stainless at 55-56 HRC — takes a keen edge and is ea…"
  },
  {
-  "name": "Acer Swift 3 SF314-43-R2YY (Ryzen 7 5700U)",
-  "page": "laptops.html",
-  "guide": "Laptops",
-  "tag": "100% sRGB IPS panel - rare at this tier"
- },
- {
   "name": "Dell S2721QS 27\" 4K UHD IPS Monitor",
   "page": "monitors.html",
   "guide": "Monitors",
   "tag": "27-inch 4K (3840x2160) IPS — 163 PPI for crisp text at 100% scaling"
- },
- {
-  "name": "GMKtec M5S Mini PC, Ryzen 5 5400U, 16GB DDR4 512GB SSD",
-  "page": "pcs.html",
-  "guide": "Desktop PCs",
-  "tag": "AMD Ryzen 5 5400U (6C/12T) — real 6-core multi-tasking, not a 4-thread N-serie…"
- },
- {
-  "name": "ASUS RT-AX86U (AX5700) Dual Band WiFi 6 Gaming Router",
-  "page": "routers.html",
-  "guide": "Routers & Mesh",
-  "tag": "AX5700 dual-band with 160MHz channels for 2.5Gbps-class Wi-Fi"
  },
  {
   "name": "Cosori TurboBlaze Air Fryer, 6 Quart, 9-in-1",
