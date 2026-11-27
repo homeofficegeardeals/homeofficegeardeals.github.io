@@ -1762,3 +1762,22 @@ h1 + p,h2 + p{line-height:1.6}
 
 /* Keep compare columns compact: values clamp to three lines */
 .cmp-col dd{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
+/* Compare: trigger button + search popover */
+.cmp-trigger{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;padding:10px 12px;border:1px solid #d7e2ef;border-radius:10px;background:#fff;font:inherit;font-size:.9rem;color:#123b68;text-align:left;cursor:pointer}
+.cmp-trigger:hover{border-color:#b9cfe8}
+.cmp-trigger[aria-expanded="true"]{border-color:#2676D9;box-shadow:0 0 0 2px rgba(38,118,217,.18)}
+.cmp-trigger-label{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.cmp-trigger .cmp-caret{position:static;transform:none;flex:0 0 auto;color:#64748b;font-size:.68rem}
+.cmp-popover{position:absolute;z-index:40;left:0;right:0;top:calc(100% + 6px);padding:8px;background:#fff;border:1px solid #d7e2ef;border-radius:12px;box-shadow:0 18px 40px rgba(15,48,87,.16)}
+.cmp-popover .cmp-input{width:100%;padding:9px 11px;border:1px solid #e2eaf4;border-radius:8px;background:#f8fbff;font:inherit;font-size:.86rem;color:#123b68}
+.cmp-popover .cmp-input:focus{outline:2px solid #2676D9;outline-offset:1px;background:#fff}
+.cmp-popover .cmp-list{position:static;max-height:240px;overflow:auto;margin:6px 0 0;padding:0;border:none;box-shadow:none;list-style:none}
+
+/* Compare rows stack on phones: label above value */
+@media (max-width:620px){
+  .cmp-col dl{grid-template-columns:1fr;gap:0}
+  .cmp-col dt{margin-top:8px;font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;color:#8194ab}
+  .cmp-col dt:first-of-type{margin-top:2px}
+  .cmp-col dd{font-size:.84rem;margin:1px 0 0;-webkit-line-clamp:4}
+}

@@ -69,17 +69,23 @@
 
     function makeSlot(host, index) {
       host.innerHTML =
-        '<input class="cmp-input" type="text" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-autocomplete="list">' +
-        '<span class="cmp-caret" aria-hidden="true">▾</span>' +
-        '<ul class="cmp-list" role="listbox" hidden></ul>';
+        '<button class="cmp-trigger" type="button" aria-expanded="false" aria-haspopup="listbox">' +
+          '<span class="cmp-trigger-label"></span><span class="cmp-caret" aria-hidden="true">▾</span>' +
+        "</button>" +
+        '<div class="cmp-popover" hidden>' +
+          '<input class="cmp-input" type="text" placeholder="Type to search…" autocomplete="off" spellcheck="false" aria-label="Search products">' +
+          '<ul class="cmp-list" role="listbox"></ul>' +
+        "</div>";
+      var trigger = host.querySelector(".cmp-trigger");
+      var label = host.querySelector(".cmp-trigger-label");
+      var pop = host.querySelector(".cmp-popover");
       var input = host.querySelector(".cmp-input");
       var list = host.querySelector(".cmp-list");
-      var query = "";
       var cursor = -1;
 
       function options() {
         var pool = listFor(index);
-        var q = query.trim().toLowerCase();
+        var q = input.value.trim().toLowerCase();
         if (q) pool = pool.filter(function (it) { return it.name.toLowerCase().indexOf(q) > -1; });
         return pool;
       }
@@ -90,25 +96,30 @@
           ? opts.map(function (it, n) {
               var active = it === chosen[index] ? " is-selected" : "";
               var cur = n === cursor ? " is-cursor" : "";
-              return '<li role="option" class="cmp-option' + active + cur + '" data-n="' + n + '">' + esc(it.name) +
-                '<em>' + esc(it.type || "") + "</em></li>";
+              return '<li role="option" class="cmp-option' + active + cur + '" data-n="' + n + '">' +
+                "<span>" + esc(it.name) + "</span><em>" + esc(it.type || "") + "</em></li>";
             }).join("")
           : '<li class="cmp-empty">No match</li>';
       }
 
+      function setLabel() {
+        label.textContent = chosen[index] ? chosen[index].name : "Choose a product";
+        trigger.setAttribute("title", label.textContent);
+      }
+
       function open() {
-        query = "";
+        input.value = "";
         cursor = options().indexOf(chosen[index]);
         paint();
-        list.hidden = false;
-        input.setAttribute("aria-expanded", "true");
+        pop.hidden = false;
+        trigger.setAttribute("aria-expanded", "true");
+        input.focus();
       }
 
       function close() {
-        list.hidden = true;
-        input.setAttribute("aria-expanded", "false");
-        input.value = chosen[index] ? chosen[index].name : "";
-        query = "";
+        pop.hidden = true;
+        trigger.setAttribute("aria-expanded", "false");
+        setLabel();
       }
 
       function pick(it) {
@@ -119,20 +130,16 @@
         draw();
       }
 
-      input.addEventListener("focus", open);
-      input.addEventListener("click", function () { if (list.hidden) open(); });
-      input.addEventListener("input", function () {
-        query = input.value;
-        cursor = -1;
-        if (list.hidden) { list.hidden = false; input.setAttribute("aria-expanded", "true"); }
-        paint();
+      trigger.addEventListener("click", function () {
+        if (pop.hidden) open(); else close();
       });
+      input.addEventListener("input", function () { cursor = -1; paint(); });
       input.addEventListener("keydown", function (e) {
         var opts = options();
         if (e.key === "ArrowDown") { e.preventDefault(); cursor = Math.min(cursor + 1, opts.length - 1); paint(); }
         else if (e.key === "ArrowUp") { e.preventDefault(); cursor = Math.max(cursor - 1, 0); paint(); }
         else if (e.key === "Enter") { e.preventDefault(); pick(opts[cursor > -1 ? cursor : 0]); }
-        else if (e.key === "Escape") { close(); input.blur(); }
+        else if (e.key === "Escape") { e.preventDefault(); close(); trigger.focus(); }
       });
       list.addEventListener("mousedown", function (e) {
         var li = e.target.closest(".cmp-option");
@@ -140,15 +147,12 @@
         e.preventDefault();
         pick(options()[parseInt(li.getAttribute("data-n"), 10)]);
       });
-      input.addEventListener("blur", function () { setTimeout(close, 120); });
+      document.addEventListener("click", function (e) {
+        if (!host.contains(e.target) && !pop.hidden) close();
+      });
 
-      input.value = chosen[index] ? chosen[index].name : "";
-      return { refresh: function () {
-        if (!list.hidden) paint();
-        if (chosen[index] && input.value !== chosen[index].name && document.activeElement !== input) {
-          input.value = chosen[index].name;
-        }
-      } };
+      setLabel();
+      return { refresh: function () { if (!pop.hidden) paint(); setLabel(); } };
     }
 
     slots.push(makeSlot(root.querySelector('[data-slot="0"]'), 0));
