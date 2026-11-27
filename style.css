@@ -1875,3 +1875,9 @@ h1 + p,h2 + p{line-height:1.6}
   .cmp-popover .cmp-list{max-height:none;overflow:auto}
   .cmp-popover .cmp-input{padding:10px 11px;font-size:.85rem}
 }
+
+/* Panel geometry is computed in JS against the widget box */
+@media (max-width:620px){
+  .cmp-field{position:static}
+  .cmp-popover{left:0;right:0;width:auto}
+}
