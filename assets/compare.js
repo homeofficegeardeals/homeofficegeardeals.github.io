@@ -113,6 +113,25 @@
         trigger.setAttribute("title", label.textContent);
       }
 
+      function placePanel() {
+        var wr = root.getBoundingClientRect();
+        var tr = trigger.getBoundingClientRect();
+        var below = window.innerHeight - tr.bottom - 14;
+        var above = tr.top - 14;
+        var want = 60 + Math.min(options().length, 7) * 44;
+        pop.style.left = "0px";
+        pop.style.right = "0px";
+        if (below < Math.min(want, 240) && above > below) {
+          pop.style.top = "auto";
+          pop.style.bottom = (wr.bottom - tr.top + 6) + "px";
+          pop.style.maxHeight = Math.max(160, Math.min(above, 380)) + "px";
+        } else {
+          pop.style.bottom = "auto";
+          pop.style.top = (tr.bottom - wr.top + 6) + "px";
+          pop.style.maxHeight = Math.max(160, Math.min(below, 380)) + "px";
+        }
+      }
+
       function open() {
         if (!primaryLocked) {
           primary = index;
@@ -123,6 +142,7 @@
         cursor = options().indexOf(chosen[index]);
         paint();
         pop.hidden = false;
+        placePanel();
         trigger.setAttribute("aria-expanded", "true");
       }
 
@@ -143,7 +163,8 @@
       trigger.addEventListener("click", function () {
         if (pop.hidden) open(); else close();
       });
-      input.addEventListener("input", function () { cursor = -1; paint(); });
+      input.addEventListener("input", function () { cursor = -1; paint(); placePanel(); });
+      window.addEventListener("resize", function () { if (!pop.hidden) placePanel(); });
       input.addEventListener("keydown", function (e) {
         var opts = options();
         if (e.key === "ArrowDown") { e.preventDefault(); cursor = Math.min(cursor + 1, opts.length - 1); paint(); }

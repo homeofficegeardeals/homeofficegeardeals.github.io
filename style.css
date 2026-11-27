@@ -1864,3 +1864,14 @@ h1 + p,h2 + p{line-height:1.6}
   .cmp-trigger{width:100%;min-width:0;padding:9px 10px;font-size:.8rem}
   .cmp-trigger-label{font-size:.8rem}
 }
+
+/* Mobile: the menu is attached to its own dropdown, flipping up if needed */
+@media (max-width:620px){
+  .cmp-popover{
+    position:absolute;left:0;right:0;top:calc(100% + 6px);bottom:auto;
+    width:auto;max-height:380px;padding:8px;border-radius:14px;z-index:120;
+    box-shadow:0 12px 34px rgba(15,48,87,.24);
+  }
+  .cmp-popover .cmp-list{max-height:none;overflow:auto}
+  .cmp-popover .cmp-input{padding:10px 11px;font-size:.85rem}
+}
