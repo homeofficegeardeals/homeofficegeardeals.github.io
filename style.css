@@ -1548,3 +1548,6 @@ h1 + p,h2 + p{line-height:1.6}
 .guides-section .guide-body strong{overflow-wrap:anywhere}
 @media (max-width:1000px){.guides-section .guide-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
 @media (max-width:560px){.guides-section .guide-grid{grid-template-columns:1fr !important}}
+
+/* Featured kit card: give it the same photo treatment as the others */
+.shop-card.featured .shop-thumb{display:block}
