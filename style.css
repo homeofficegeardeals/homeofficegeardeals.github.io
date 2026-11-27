@@ -1694,3 +1694,11 @@ h1 + p,h2 + p{line-height:1.6}
 .top-pick .badge.tier{display:inline-block;margin:8px 0 6px;padding:3px 9px;border-radius:999px;background:#e8f1fc;color:#123b68;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
 .top-pick h2 + .badge.tier{margin-top:2px}
 .top-pick .badge.our-pick{margin:0 0 8px}
+
+/* Comparison cards: align rows across columns, add a visible surface */
+.compare-card{background:#ffffff;border:1px solid #e4ecf6;box-shadow:0 1px 3px rgba(15,48,87,.05)}
+.compare-card b{min-height:2.62em;display:block}
+.compare-card .compare-pill{min-height:18px}
+.compare-card dl{grid-template-rows:repeat(3,minmax(1.4em,auto));align-content:start}
+@media (max-width:700px){.compare-card b{min-height:0}}
+.top-pick h2 + .badge.tier{margin-top:6px;margin-bottom:8px}
