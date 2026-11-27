@@ -1840,3 +1840,19 @@ h1 + p,h2 + p{line-height:1.6}
   .cmp-field{position:relative}
   .cmp-popover{left:0;right:0;width:auto;top:calc(100% + 6px)}
 }
+
+/* Mobile: compare menu becomes a bottom sheet so it is never clipped */
+@media (max-width:620px){
+  .cmp-popover{
+    position:fixed;left:10px;right:10px;bottom:10px;top:auto;
+    max-height:72vh;padding:10px;border-radius:16px;z-index:120;
+    box-shadow:0 -10px 40px rgba(15,48,87,.28);
+  }
+  .cmp-popover .cmp-list{max-height:52vh}
+  .cmp-popover .cmp-input{font-size:.9rem;padding:11px 12px}
+  .cmp-option{padding:10px 10px;font-size:.88rem}
+  .cmp-option em{font-size:.68rem}
+}
+
+/* Complete Setups link in the top nav */
+.nav-plain[href$="bundles.html"]{font-weight:600}
