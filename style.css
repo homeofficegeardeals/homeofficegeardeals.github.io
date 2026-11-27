@@ -1881,3 +1881,11 @@ h1 + p,h2 + p{line-height:1.6}
   .cmp-field{position:static}
   .cmp-popover{left:0;right:0;width:auto}
 }
+
+/* Compare trigger: dark button, white text, visible border */
+.cmp-trigger{background:#111827;border:1px solid #111827;color:#ffffff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.cmp-trigger:hover{background:#0b1220;border-color:#2676D9;color:#fff}
+.cmp-trigger[aria-expanded="true"]{background:#0b1220;border-color:#2676D9;box-shadow:0 0 0 2px rgba(38,118,217,.35)}
+.cmp-trigger .cmp-caret{color:#ffffff}
+.cmp-trigger-label{color:#ffffff}
+@media (max-width:620px){.cmp-trigger{background:#111827;color:#fff}}
