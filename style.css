@@ -1592,3 +1592,11 @@ h1 + p,h2 + p{line-height:1.6}
   .main-footer .copyright p{margin:0 0 .45rem;max-width:none;font-size:.8rem;line-height:1.5}
   .main-footer .copyright p:last-child{margin-bottom:0}
 }
+
+/* Shop cards v4: photo occupies the free area above the panel, so nothing is
+   cropped off the sides; only the bottom edge fades into the navy panel. */
+.shop-grid .shop-card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:340px;height:auto;padding:0;gap:0;overflow:hidden;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:#0f3057}
+.shop-grid .shop-card::before{display:none}
+.shop-grid .shop-card .shop-thumb{position:relative;inset:auto;display:block;flex:1 1 auto;width:100%;min-height:195px;height:auto;margin:0;background-size:cover;background-position:center;z-index:0}
+.shop-grid .shop-card .shop-thumb::after{content:'';position:absolute;left:0;right:0;bottom:0;height:55%;background:linear-gradient(180deg,rgba(15,48,87,0) 0%,rgba(15,48,87,.55) 62%,rgba(15,48,87,.94) 100%);pointer-events:none}
+.shop-grid .shop-card > .shop-body{position:relative;z-index:2;display:block;flex:0 0 auto;margin:0;padding:15px 18px 18px;background:#0f3057}
