@@ -10,7 +10,7 @@ window.PICKS = [
   "name": "Philips Sonicare 4100 Rechargeable Electric Toothbrush (White, HX3681/23)",
   "page": "beauty.html",
   "guide": "Beauty & Personal Care",
-  "tag": "Sonic action at 31,000 brush strokes/min, gentler on gums than rotating brushes"
+  "tag": "Sonic action at 31,000 brush strokes/min, gentler on gums than rotating brushe…"
  },
  {
   "name": "Herman Miller Aeron Chair",
@@ -28,13 +28,13 @@ window.PICKS = [
   "name": "Noctua NH-D15 Dual Tower CPU Cooler",
   "page": "components.html",
   "guide": "Other Components",
-  "tag": "Dual NF-A15 140mm PWM fans with 6 heatpipes — air cooling that matches 240mm AIOs without pump failure risk"
+  "tag": "Dual NF-A15 140mm PWM fans with 6 heatpipes — air cooling that matches 240mm A…"
  },
  {
   "name": "AMD Ryzen 7 5800X3D 8-Core 16-Thread Desktop Processor with 3D V-Cache",
   "page": "cpu.html",
   "guide": "Processors",
-  "tag": "96MB L3 cache via 3D V-Cache — the single biggest gaming uplift on AM4, often beating newer non-X3D chips"
+  "tag": "96MB L3 cache via 3D V-Cache — the single biggest gaming uplift on AM4, often …"
  },
  {
   "name": "Vari Classic Electric Standing Desk 60x30",
@@ -64,7 +64,7 @@ window.PICKS = [
   "name": "Sony WH-1000XM4 Wireless Noise Cancelling Headphones",
   "page": "headphones/headphones.html",
   "guide": "Headphones",
-  "tag": "Dual Noise Sensor ANC with QN1 processor; 30-hour battery, 10-min charge for 5 hours"
+  "tag": "Dual Noise Sensor ANC with QN1 processor; 30-hour battery, 10-min charge for 5…"
  },
  {
   "name": "Levoit Core 300 True HEPA Air Purifier",
@@ -88,7 +88,7 @@ window.PICKS = [
   "name": "Victorinox Fibrox Pro Chef's Knife, 8 Inch",
   "page": "kitchen.html",
   "guide": "Kitchen Cookware & Knives",
-  "tag": "Stamped high-carbon Swiss stainless at 55-56 HRC — takes a keen edge and is easy to resharpen"
+  "tag": "Stamped high-carbon Swiss stainless at 55-56 HRC — takes a keen edge and is ea…"
  },
  {
   "name": "Acer Swift 3 SF314-43-R2YY (Ryzen 7 5700U)",
@@ -106,7 +106,7 @@ window.PICKS = [
   "name": "GMKtec M5S Mini PC, Ryzen 5 5400U, 16GB DDR4 512GB SSD",
   "page": "pcs.html",
   "guide": "Desktop PCs",
-  "tag": "AMD Ryzen 5 5400U (6C/12T) — real 6-core multi-tasking, not a 4-thread N-series chip"
+  "tag": "AMD Ryzen 5 5400U (6C/12T) — real 6-core multi-tasking, not a 4-thread N-serie…"
  },
  {
   "name": "ASUS RT-AX86U (AX5700) Dual Band WiFi 6 Gaming Router",
@@ -118,7 +118,7 @@ window.PICKS = [
   "name": "Cosori TurboBlaze Air Fryer, 6 Quart, 9-in-1",
   "page": "small-appliances.html",
   "guide": "Small Kitchen Appliances",
-  "tag": "90-450F range — the 450F top end and low dehydrate range are the differentiators vs 400F-only units"
+  "tag": "90-450F range — the 450F top end and low dehydrate range are the differentiato…"
  },
  {
   "name": "Logitech Brio 4K Ultra HD Webcam",

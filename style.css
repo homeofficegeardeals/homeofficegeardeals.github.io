@@ -1653,3 +1653,10 @@ h1 + p,h2 + p{line-height:1.6}
   .bundle-item{flex-direction:column;align-items:flex-start;gap:10px}
   .bundle-cta{width:100%;justify-content:center}
 }
+
+/* Complete setups page shell */
+.wrap.bundle-page{max-width:1000px;margin:0 auto;padding:28px 1.5rem 0}
+.bundle-page h1{margin:6px 0 12px;font-size:clamp(1.7rem,4vw,2.4rem);color:#123b68}
+.page-back{margin:0;font-size:.85rem}
+.page-back a{color:#5b6b80;text-decoration:none}
+.page-back a:hover{color:#2676D9}
