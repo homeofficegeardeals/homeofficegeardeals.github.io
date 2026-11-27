@@ -1702,3 +1702,8 @@ h1 + p,h2 + p{line-height:1.6}
 .compare-card dl{grid-template-rows:repeat(3,minmax(1.4em,auto));align-content:start}
 @media (max-width:700px){.compare-card b{min-height:0}}
 .top-pick h2 + .badge.tier{margin-top:6px;margin-bottom:8px}
+
+/* Comparison block surface: one panel, three columns inside */
+.compare-cards{background:#f6f9fd;border:1px solid #e4ecf6;border-radius:16px;padding:14px;gap:12px}
+.compare-card{box-shadow:none}
+@media (max-width:700px){.compare-cards{padding:10px;border-radius:14px}}
