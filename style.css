@@ -1759,3 +1759,6 @@ h1 + p,h2 + p{line-height:1.6}
   .cmp-col dd{font-size:.82rem}
   .cmp-input{font-size:.82rem;padding:9px 28px 9px 10px}
 }
+
+/* Keep compare columns compact: values clamp to three lines */
+.cmp-col dd{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
