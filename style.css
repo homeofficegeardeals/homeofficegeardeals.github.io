@@ -1621,3 +1621,35 @@ h1 + p,h2 + p{line-height:1.6}
 .compare-table tr:last-child th,.compare-table tr:last-child td{border-bottom:none}
 .top-pick .badge.tier{display:inline-block;margin:8px 0 0;padding:3px 9px;border-radius:999px;background:#e8f1fc;color:#123b68;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
 @media (max-width:680px){.bestfor-row{gap:6px}.bestfor-chip{padding:7px 11px;font-size:.8rem}}
+
+/* Homepage rotator */
+.home-rotator{max-width:1180px;margin:0 auto 3rem;padding:0 1.5rem}
+.home-rotator h2{margin:0 0 4px}
+.home-rotator .section-sub{margin:0 0 18px;color:#5b6b80}
+.rotator-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.rotator-card{display:flex;flex-direction:column;gap:6px;padding:18px 18px 16px;border:1px solid #e3eaf3;border-radius:14px;background:#fff;text-decoration:none;color:inherit;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+.rotator-card:hover{transform:translateY(-2px);border-color:#c3d8f0;box-shadow:0 10px 24px rgba(15,48,87,.10)}
+.rotator-kicker{font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:#64748b}
+.rotator-card strong{font-size:1rem;line-height:1.35;color:#123b68}
+.rotator-tag{font-size:.82rem;color:#5b6b80}
+.rotator-cta{margin-top:auto;padding-top:10px;font-size:.85rem;font-weight:600;color:#2676D9}
+.rotator-more{margin:16px 0 0}
+@media (max-width:900px){.rotator-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.rotator-grid{grid-template-columns:1fr}}
+
+/* Complete setups page */
+.bundle-intro{max-width:70ch;color:#4a5a70;margin:0 0 28px;line-height:1.6}
+.bundle{border:1px solid #e3eaf3;border-radius:16px;padding:22px 22px 8px;margin:0 0 24px;background:#fff}
+.bundle h2{margin:0 0 4px;font-size:1.3rem}
+.bundle-who{margin:0 0 16px;color:#5b6b80;font-size:.93rem}
+.bundle-list{list-style:none;margin:0;padding:0}
+.bundle-item{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:14px 0;border-top:1px solid #eef2f7}
+.bundle-copy p{margin:4px 0 0;font-size:.88rem;color:#5b6b80;line-height:1.45}
+.bundle-name{font-weight:600;color:#123b68;text-decoration:none;border-bottom:1px solid rgba(38,118,217,.35)}
+.bundle-name:hover{color:#2676D9}
+.bundle-cta{flex:0 0 auto;white-space:nowrap}
+.bundle-foot{margin:8px 0 40px;color:#5b6b80}
+@media (max-width:720px){
+  .bundle-item{flex-direction:column;align-items:flex-start;gap:10px}
+  .bundle-cta{width:100%;justify-content:center}
+}
