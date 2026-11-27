@@ -1820,3 +1820,17 @@ h1 + p,h2 + p{line-height:1.6}
 /* Never clip comparison text */
 .cmp-col dd{-webkit-line-clamp:unset;display:block;overflow:visible}
 .cmp-col dt,.cmp-col dd{overflow-wrap:anywhere}
+
+/* Tier badge rhythm: even gap above, tight below */
+.top-pick .badge.tier{display:inline-block;margin:10px 0 2px}
+.top-pick h2 + .badge.tier{margin-top:10px}
+.top-pick .badge.tier + .product-info > .product-specs{margin-top:6px}
+.top-pick .badge.our-pick{margin:0 0 10px}
+.top-pick h2{margin-bottom:0}
+
+/* Compare popover spans the whole widget, so long names are readable */
+.compare-widget{position:relative}
+@media (max-width:620px){
+  .cmp-field{position:static}
+  .cmp-popover{left:0;right:0;width:auto}
+}
