@@ -1781,3 +1781,18 @@ h1 + p,h2 + p{line-height:1.6}
   .cmp-col dt:first-of-type{margin-top:2px}
   .cmp-col dd{font-size:.84rem;margin:1px 0 0;-webkit-line-clamp:4}
 }
+
+/* Compare columns: type as a kicker above the product name */
+.cmp-kicker{display:block;font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;color:#7c8ea6;font-weight:700}
+.cmp-col b{margin-top:2px}
+.cmp-col .cmp-pill{margin-top:2px}
+
+/* Phones: one product per row so names are not squeezed */
+@media (max-width:620px){
+  .cmp-out{grid-template-columns:1fr;gap:12px}
+  .cmp-col b{font-size:.95rem}
+  .cmp-col dl{grid-template-columns:1fr;gap:0}
+  .cmp-col dt{margin-top:8px;font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;color:#8194ab}
+  .cmp-col dt:first-of-type{margin-top:4px}
+  .cmp-col dd{font-size:.85rem;margin:1px 0 0;-webkit-line-clamp:4}
+}

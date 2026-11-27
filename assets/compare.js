@@ -1,7 +1,8 @@
-// Two searchable product dropdowns + side-by-side comparison.
-// - only products of the same type can be compared
-// - picking on either side re-scopes the other side
-// - the sidebar filter chips also narrow the dropdown lists
+// Two product dropdowns + side-by-side comparison.
+// - the first dropdown you open lists everything the sidebar filters allow
+// - it becomes the "lead" pick; the other dropdown then offers the same type
+// - picking on the lead side re-scopes the other side
+// - the search field inside the panel is opt-in (no autofocus, no forced keyboard)
 (function () {
   function esc(s) {
     return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -28,13 +29,18 @@
       items[1] ||
       first;
     var chosen = [first, partner];
+    var primary = 0;
+    var primaryLocked = false;
     var slots = [];
 
+    function visiblePool() {
+      return items.filter(function (it) { return cardVisible(it.id); });
+    }
+
     function listFor(i) {
-      var other = chosen[1 - i];
-      var pool = items.filter(function (it) { return cardVisible(it.id); });
-      if (other && other.type) {
-        var same = pool.filter(function (it) { return it.type === other.type; });
+      var pool = visiblePool();
+      if (i !== primary && chosen[primary] && chosen[primary].type) {
+        var same = pool.filter(function (it) { return it.type === chosen[primary].type; });
         if (same.length > 1) pool = same;
       }
       return pool;
@@ -44,11 +50,11 @@
       out.innerHTML = chosen.map(function (p) {
         return (
           '<div class="cmp-col">' +
-            '<span class="cmp-pill' + (p.tier ? "" : " cmp-pill-empty") + '">' + esc(p.tier || p.type || "In the guide") + "</span>" +
+            '<span class="cmp-kicker">' + esc(p.type || "") + "</span>" +
+            (p.tier ? '<span class="cmp-pill">' + esc(p.tier) + "</span>" : "") +
             "<b>" + esc(p.name) + "</b>" +
             "<dl>" +
               "<dt>Best for</dt><dd>" + esc(p.bestFor || "—") + "</dd>" +
-              "<dt>Type</dt><dd>" + esc(p.type || "—") + "</dd>" +
               "<dt>Warranty</dt><dd>" + esc(p.warranty || "Not stated") + "</dd>" +
               "<dt>Standout</dt><dd>" + esc(p.standout || "—") + "</dd>" +
             "</dl>" +
@@ -59,9 +65,9 @@
     }
 
     function syncOther(i) {
-      var pool = listFor(i);
-      if (pool.indexOf(chosen[1 - i]) === -1) {
-        var alt = pool.filter(function (it) { return it !== chosen[i]; })[0] || pool[0];
+      var otherPool = listFor(1 - i);
+      if (otherPool.indexOf(chosen[1 - i]) === -1) {
+        var alt = otherPool.filter(function (it) { return it !== chosen[i]; })[0] || otherPool[0];
         if (alt) chosen[1 - i] = alt;
       }
       slots[1 - i].refresh();
@@ -73,7 +79,7 @@
           '<span class="cmp-trigger-label"></span><span class="cmp-caret" aria-hidden="true">▾</span>' +
         "</button>" +
         '<div class="cmp-popover" hidden>' +
-          '<input class="cmp-input" type="text" placeholder="Type to search…" autocomplete="off" spellcheck="false" aria-label="Search products">' +
+          '<input class="cmp-input" type="text" placeholder="Type to narrow the list…" autocomplete="off" spellcheck="false" aria-label="Search products">' +
           '<ul class="cmp-list" role="listbox"></ul>' +
         "</div>";
       var trigger = host.querySelector(".cmp-trigger");
@@ -108,12 +114,16 @@
       }
 
       function open() {
+        if (!primaryLocked) {
+          primary = index;
+          primaryLocked = true;
+          slots.forEach(function (s, n) { if (s && n !== index) s.refresh(); });
+        }
         input.value = "";
         cursor = options().indexOf(chosen[index]);
         paint();
         pop.hidden = false;
         trigger.setAttribute("aria-expanded", "true");
-        input.focus();
       }
 
       function close() {
@@ -159,17 +169,16 @@
     slots.push(makeSlot(root.querySelector('[data-slot="1"]'), 1));
     draw();
 
-    // Sidebar filter chips narrow the dropdown pools too.
+    // Sidebar filter chips narrow the pools too.
     document.addEventListener("click", function (e) {
       if (!e.target.closest(".picks-filters button")) return;
       setTimeout(function () {
-        slots.forEach(function (s) { s.refresh(); });
-        var pool = listFor(0);
-        if (pool.indexOf(chosen[0]) === -1 && pool[0]) chosen[0] = pool[0];
-        pool = listFor(1);
-        if (pool.indexOf(chosen[1]) === -1) {
-          var alt = pool.filter(function (it) { return it !== chosen[0]; })[0] || pool[0];
-          if (alt) chosen[1] = alt;
+        var pool = visiblePool();
+        if (pool.indexOf(chosen[primary]) === -1 && pool[0]) chosen[primary] = pool[0];
+        var others = listFor(1 - primary);
+        if (others.indexOf(chosen[1 - primary]) === -1) {
+          var alt = others.filter(function (it) { return it !== chosen[primary]; })[0] || others[0];
+          if (alt) chosen[1 - primary] = alt;
         }
         slots.forEach(function (s) { s.refresh(); });
         draw();
