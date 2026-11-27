@@ -1674,3 +1674,23 @@ h1 + p,h2 + p{line-height:1.6}
   .compare-stack dt{color:#64748b;font-weight:600}
   .compare-stack dd{margin:0;color:#33475f}
 }
+
+/* Apple-style comparison cards (replaces the wide table) */
+.compare-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:14px 0 22px;width:100%}
+.compare-card{display:flex;flex-direction:column;gap:8px;min-width:0;padding:14px 16px 16px;border:1px solid #e3eaf3;border-radius:14px;background:#fff}
+.compare-pill{align-self:flex-start;padding:3px 9px;border-radius:999px;background:#e8f1fc;color:#123b68;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.compare-card b{color:#123b68;font-size:.95rem;line-height:1.32;overflow-wrap:anywhere}
+.compare-card dl{display:grid;grid-template-columns:70px minmax(0,1fr);gap:6px 10px;margin:2px 0 0;font-size:.85rem;line-height:1.4}
+.compare-card dt{color:#64748b;font-weight:600}
+.compare-card dd{margin:0;color:#33475f;overflow-wrap:anywhere}
+.compare-wrap,.compare-table,.compare-stack{display:none !important}
+@media (max-width:900px){.compare-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){
+  .compare-cards{grid-template-columns:1fr;gap:10px}
+  .compare-card{padding:12px 14px 14px}
+}
+
+/* Tier badge spacing on product cards */
+.top-pick .badge.tier{display:inline-block;margin:8px 0 6px;padding:3px 9px;border-radius:999px;background:#e8f1fc;color:#123b68;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.top-pick h2 + .badge.tier{margin-top:2px}
+.top-pick .badge.our-pick{margin:0 0 8px}
