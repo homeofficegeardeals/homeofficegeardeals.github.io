@@ -1796,3 +1796,16 @@ h1 + p,h2 + p{line-height:1.6}
   .cmp-col dt:first-of-type{margin-top:4px}
   .cmp-col dd{font-size:.85rem;margin:1px 0 0;-webkit-line-clamp:4}
 }
+
+/* Phones: keep the comparison side by side; dropdown sits above its own column */
+@media (max-width:620px){
+  .cmp-out{grid-template-columns:1fr 1fr;gap:10px}
+  .cmp-bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:center}
+  .cmp-vs{display:none}
+  .cmp-trigger{padding:9px 10px;font-size:.78rem}
+  .cmp-col{padding:12px 12px 14px}
+  .cmp-col b{font-size:.88rem;line-height:1.28}
+  .cmp-col dt{font-size:.64rem;margin-top:7px}
+  .cmp-col dd{font-size:.8rem}
+  .cmp-cta{font-size:.76rem;padding:9px 6px}
+}
