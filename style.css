@@ -1570,3 +1570,25 @@ h1 + p,h2 + p{line-height:1.6}
 .guides-section .guide-body strong{color:#fff}
 .guides-section .guide-meta{color:#bed3ea}
 .guides-section .guide-card:hover{box-shadow:0 14px 30px rgba(15,48,87,.28)}
+
+/* Keep the photo clean: the navy fade only touches the lower edge */
+.shop-grid .shop-card::before{background:linear-gradient(180deg,rgba(15,48,87,0) 0%,rgba(15,48,87,0) 64%,rgba(15,48,87,.42) 84%,rgba(15,48,87,.9) 97%,#0f3057 100%)}
+.guides-section .guide-thumb::after{background:linear-gradient(180deg,rgba(15,48,87,0) 0%,rgba(15,48,87,0) 54%,rgba(15,48,87,.38) 80%,rgba(15,48,87,.9) 97%,#0f3057 100%)}
+
+/* Footer on phones: one tidy stack, everything on the same left edge */
+@media (max-width:680px){
+  .main-footer{padding:2rem 1.1rem 1.4rem}
+  .main-footer .footer-content{display:grid;grid-template-columns:1fr 1fr;column-gap:1.1rem;row-gap:1.3rem;align-items:start}
+  .main-footer .footer-nav{grid-column:1 / -1;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:.4rem;margin:0;padding:0}
+  .main-footer .footer-nav .nav-logo{margin:0;padding:0;display:block;text-align:left}
+  .main-footer .footer-nav .nav-logo a{display:inline-flex;align-items:center;gap:.4rem;line-height:1.25}
+  .main-footer .nav-menu{display:grid;grid-template-columns:1fr 1fr;column-gap:1rem;row-gap:.4rem;width:100%;margin:.5rem 0 0;padding:0;justify-content:flex-start}
+  .main-footer .nav-menu li{margin:0;text-align:left}
+  .main-footer .social-links{grid-column:1;display:flex;flex-direction:column;align-items:flex-start;gap:.4rem;margin:0;padding:0}
+  .main-footer .social-links ul{display:flex;flex-direction:column;align-items:flex-start;gap:.4rem;margin:0;padding:0}
+  .main-footer .social-links h3{margin:0}
+  .main-footer .trust-badges{grid-column:2;display:flex;flex-direction:column;align-items:flex-start;gap:.45rem;margin:0;padding:0}
+  .main-footer .copyright{grid-column:1 / -1;display:block;margin:0;padding-top:1rem;border-top:1px solid rgba(255,255,255,.12);text-align:left}
+  .main-footer .copyright p{margin:0 0 .45rem;max-width:none;font-size:.8rem;line-height:1.5}
+  .main-footer .copyright p:last-child{margin-bottom:0}
+}
