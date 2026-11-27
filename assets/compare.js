@@ -21,7 +21,13 @@
     if (!items || items.length < 2) return;
 
     var out = root.querySelector(".cmp-out");
-    var chosen = [items[0], items[1] || items[0]];
+    var first = items[0];
+    var partner =
+      items.filter(function (it) { return it !== first && it.type === first.type && it.tier === "Best Value"; })[0] ||
+      items.filter(function (it) { return it !== first && it.type === first.type; })[0] ||
+      items[1] ||
+      first;
+    var chosen = [first, partner];
     var slots = [];
 
     function listFor(i) {
