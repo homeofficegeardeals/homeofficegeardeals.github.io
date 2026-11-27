@@ -1551,3 +1551,22 @@ h1 + p,h2 + p{line-height:1.6}
 
 /* Featured kit card: give it the same photo treatment as the others */
 .shop-card.featured .shop-thumb{display:block}
+
+/* Shop cards v3: photo fills the whole card, solid navy text panel */
+.shop-grid .shop-card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:340px;height:auto;padding:0;gap:0;overflow:hidden;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:#0f3057}
+.shop-grid .shop-card .shop-thumb{position:absolute;inset:0;display:block;width:auto;height:auto;background-size:cover;background-position:center;z-index:0;margin:0}
+.shop-grid .shop-card::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(15,48,87,.05) 0%,rgba(15,48,87,.22) 42%,rgba(15,48,87,.86) 74%,#0f3057 92%)}
+.shop-grid .shop-card > .shop-body{position:relative;z-index:2;display:block;margin:0;padding:16px 18px 18px;background:#0f3057;box-shadow:0 -10px 24px rgba(15,48,87,.35)}
+.shop-grid .shop-card h3{margin:0 0 6px;color:#fff;font-size:1.02rem}
+.shop-grid .shop-card p{margin:0;color:#e8f0fb;font-size:.9rem;line-height:1.45}
+@media (max-width:520px){.shop-grid .shop-card{min-height:300px}}
+
+/* Blog cards: same navy treatment as the shop cards */
+.guides-section .guide-card{background:#0f3057;border-color:rgba(255,255,255,.08);color:#fff}
+.guides-section .guide-thumb{position:relative;display:block;height:150px;overflow:hidden}
+.guides-section .guide-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,48,87,.28) 0%,rgba(15,48,87,.62) 58%,rgba(15,48,87,.95) 100%)}
+.guides-section .guide-body{background:#0f3057;padding:14px 16px 18px}
+.guides-section .guide-kicker{color:#9dc0e8}
+.guides-section .guide-body strong{color:#fff}
+.guides-section .guide-meta{color:#bed3ea}
+.guides-section .guide-card:hover{box-shadow:0 14px 30px rgba(15,48,87,.28)}
