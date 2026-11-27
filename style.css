@@ -1902,3 +1902,12 @@ h1 + p,h2 + p{line-height:1.6}
 .cmp-option.is-selected{background:#cfe2f7}
 .cmp-empty{background:transparent}
 @media (max-width:620px){.cmp-trigger{background:#ffffff;color:#123b68}}
+
+/* Comparison list: tinted rows, not white */
+.cmp-popover{background:#d9e6f4;border:1px solid #bfd2e8}
+.cmp-popover .cmp-list{background:transparent}
+.cmp-option{background:#eaf2fb;color:#123b68}
+.cmp-option em{color:#5b7794}
+.cmp-option:hover,.cmp-option.is-cursor{background:#c9dff6}
+.cmp-option.is-selected{background:#b9d5f2;font-weight:600}
+.cmp-popover .cmp-input{background:#ffffff;border:1px solid #b9cde4}
