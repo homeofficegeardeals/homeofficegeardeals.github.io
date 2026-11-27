@@ -1834,3 +1834,9 @@ h1 + p,h2 + p{line-height:1.6}
   .cmp-field{position:static}
   .cmp-popover{left:0;right:0;width:auto}
 }
+
+/* Popover stays attached to its own trigger, but as wide as the field */
+@media (max-width:620px){
+  .cmp-field{position:relative}
+  .cmp-popover{left:0;right:0;width:auto;top:calc(100% + 6px)}
+}
