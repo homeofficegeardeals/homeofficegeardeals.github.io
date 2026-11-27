@@ -1809,3 +1809,14 @@ h1 + p,h2 + p{line-height:1.6}
   .cmp-col dd{font-size:.8rem}
   .cmp-cta{font-size:.76rem;padding:9px 6px}
 }
+
+/* Phones: dropdowns are full-width like the product cards; comparison stays 2-up */
+@media (max-width:620px){
+  .cmp-bar{grid-template-columns:1fr;gap:8px}
+  .cmp-trigger{width:100%}
+  .cmp-col dl{grid-template-columns:1fr}
+}
+
+/* Never clip comparison text */
+.cmp-col dd{-webkit-line-clamp:unset;display:block;overflow:visible}
+.cmp-col dt,.cmp-col dd{overflow-wrap:anywhere}
