@@ -1945,3 +1945,9 @@ h1 + p,h2 + p{line-height:1.6}
   .main-nav .nav-body{gap:.85rem;flex-wrap:nowrap}
   .main-nav .nav-search input{font-size:.85rem}
 }
+
+/* Tier badge: tighter, even spacing under the product title */
+.top-pick h2{margin:0 0 2px}
+.top-pick h2 + .badge.tier{margin:4px 0 6px}
+.top-pick .badge.tier{margin-top:4px;margin-bottom:6px}
+.top-pick .badge.tier + .product-info .product-specs{margin-top:2px}
