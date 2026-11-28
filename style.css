@@ -1938,3 +1938,10 @@ h1 + p,h2 + p{line-height:1.6}
   .main-nav .nav-body .nav-plain{padding:0 .1rem}
   .main-nav .nav-logo{margin-right:.35rem}
 }
+
+/* Desktop nav: never wrap labels, keep one row */
+@media (min-width:1024px){
+  .main-nav .nav-group-toggle,.main-nav .nav-plain{white-space:nowrap}
+  .main-nav .nav-body{gap:.85rem;flex-wrap:nowrap}
+  .main-nav .nav-search input{font-size:.85rem}
+}
