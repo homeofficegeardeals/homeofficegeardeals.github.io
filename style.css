@@ -1963,3 +1963,12 @@ h1 + p,h2 + p{line-height:1.6}
 /* Nudge the tier badge slightly further right */
 .top-pick h2 + .badge.tier{margin-left:16px}
 @media (max-width:620px){.top-pick h2 + .badge.tier{margin-left:16px}}
+
+/* Footer: link column lines up with the wordmark text, columns evenly spaced */
+@media (min-width:761px){
+  .main-footer .footer-content{grid-template-columns:1.1fr 1fr 1fr;column-gap:2.5rem;align-items:start}
+  .main-footer .nav-menu{padding-left:19px;margin-left:0}
+  .main-footer .nav-logo a{display:inline-flex;align-items:center;gap:.45rem}
+  .main-footer .trust-badges{align-items:flex-start}
+  .main-footer .social-links ul{padding-left:0}
+}
