@@ -1955,3 +1955,7 @@ h1 + p,h2 + p{line-height:1.6}
 /* Tier badge starts where the product title starts */
 .top-pick .badge.tier{margin-left:9px}
 @media (max-width:620px){.top-pick .badge.tier{margin-left:9px}}
+
+/* Align badge text with title text (title has 17.6px padding, badge 9px) */
+.top-pick h2 + .badge.tier{margin:4px 0 6px 9px}
+.top-pick .badge.our-pick{margin-left:0}
