@@ -1951,3 +1951,7 @@ h1 + p,h2 + p{line-height:1.6}
 .top-pick h2 + .badge.tier{margin:4px 0 6px}
 .top-pick .badge.tier{margin-top:4px;margin-bottom:6px}
 .top-pick .badge.tier + .product-info .product-specs{margin-top:2px}
+
+/* Tier badge starts where the product title starts */
+.top-pick .badge.tier{margin-left:9px}
+@media (max-width:620px){.top-pick .badge.tier{margin-left:9px}}
