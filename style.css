@@ -1931,3 +1931,10 @@ h1 + p,h2 + p{line-height:1.6}
 /* Mobile: the list scrolls inside the panel instead of spilling out */
 .cmp-popover .cmp-list{max-height:min(52vh,320px);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
 @media (max-width:620px){.cmp-popover{overscroll-behavior:contain}}
+
+/* Desktop nav breathing room */
+@media (min-width:1024px){
+  .main-nav .nav-body{gap:1.15rem}
+  .main-nav .nav-body .nav-plain{padding:0 .1rem}
+  .main-nav .nav-logo{margin-right:.35rem}
+}
