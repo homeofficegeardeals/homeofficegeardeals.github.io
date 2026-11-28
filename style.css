@@ -1911,3 +1911,23 @@ h1 + p,h2 + p{line-height:1.6}
 .cmp-option:hover,.cmp-option.is-cursor{background:#c9dff6}
 .cmp-option.is-selected{background:#b9d5f2;font-weight:600}
 .cmp-popover .cmp-input{background:#ffffff;border:1px solid #b9cde4}
+
+/* Desktop header: logo, nav and search on one row */
+@media (min-width:1024px){
+  .main-nav:not(.footer-nav){display:flex;flex-wrap:nowrap;align-items:center;column-gap:.9rem}
+  .main-nav .nav-logo{flex:0 0 auto;width:auto;margin:0}
+  .main-nav .nav-logo a{font-size:1rem}
+  .main-nav .nav-body{flex:1 1 auto;flex-wrap:nowrap;width:auto;justify-content:flex-start;gap:.35rem}
+  .main-nav .nav-search{margin-left:auto;flex:0 0 auto;max-width:300px}
+}
+
+/* Compare list: white surface again */
+.cmp-popover{background:#ffffff;border:1px solid #d7e2ef}
+.cmp-option{background:#ffffff;color:#123b68}
+.cmp-option:hover,.cmp-option.is-cursor{background:#eef5fd}
+.cmp-option.is-selected{background:#e3eefc}
+.cmp-popover .cmp-list{background:#ffffff}
+
+/* Mobile: the list scrolls inside the panel instead of spilling out */
+.cmp-popover .cmp-list{max-height:min(52vh,320px);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+@media (max-width:620px){.cmp-popover{overscroll-behavior:contain}}
